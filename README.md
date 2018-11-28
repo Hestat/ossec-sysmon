@@ -1,6 +1,6 @@
 # ossec-sysmon
 
-##A Ruleset to enhance detection capabilities of Ossec using Sysmon
+## A Ruleset to enhance detection capabilities of Ossec using Sysmon
 
 See the following post to see how this ruleset can help you detect Emotet and other malicious document malware.
 
