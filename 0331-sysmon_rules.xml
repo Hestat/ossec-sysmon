@@ -45,5 +45,13 @@
  <description>Command Line process spawned from Mircosoft Excel Doc</description>
  </rule>
 
+ <rule id="255007" level="10">
+ <if_group>sysmon_event1</if_group>
+ <match>mshta.exe</match>
+ <regex>http</regex>
+ <description>Possible Malicious HTA file executed</description>
+ <group>sysmon_event1,hta,MITRE</group>
+ </rule>
+
 </group>
 
