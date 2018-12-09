@@ -1,4 +1,4 @@
-<group name="sysmon,MITRE">
+<group name="sysmon,MITRE,">
 	
  <rule id="255000" level="6">
  <if_group>sysmon_event1</if_group>
@@ -19,35 +19,35 @@
  <match>Network connection detected</match>
  <regex>powershell.exe</regex>
  <description>Powershell Network Connection</description>
- <group>sysmon_event3,network</group>
+ <group>sysmon_event3,network,</group>
  </rule>
 
  <rule id="255003" level="12">
  <if_sid>255000</if_sid>
  <regex>.doc</regex>
  <description>Powershell Spawned from Office Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule>
 
  <rule id="255004" level="12">
  <if_sid>255000</if_sid>
  <regex>.xls</regex>
  <description>Powershell Spawned from Excel Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule>
 
  <rule id="255005" level="12">
  <if_sid>255001</if_sid>
  <regex>WINWORD.EXE</regex>
  <description>Command Line process spawned from Mircosoft Word Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule>
 
  <rule id="255006" level="12">
  <if_sid>255001</if_sid>
  <regex>EXCEL.EXE</regex>
  <description>Command Line process spawned from Mircosoft Excel Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule>
 
  <rule id="255007" level="10">
@@ -55,63 +55,95 @@
  <match>mshta.exe</match>
  <regex>http</regex>
  <description>Possible Malicious HTA file executed</description>
- <group>sysmon_event1,hta,MITRE</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1170,</group>
  </rule>
 
  <rule id="255008" level="12">
  <if_sid>255001</if_sid>
  <regex>POWERPNT.exe</regex>
  <description>Command Line process spawned from Mircosoft Powerpoint Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule>
 
  <rule id="255009" level="12">
  <if_sid>255001</if_sid>
  <regex>OUTLOOK.EXE</regex>
  <description>Command Line process spawned from Mircosoft Outlook</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule> 
 
  <rule id="255010" level="12">
  <if_sid>255001</if_sid>
  <regex>VISIO.exe</regex>
  <description>Command Line process spawned from Mircosoft Visio Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule> 
 
  <rule id="255011" level="12">
  <if_sid>255001</if_sid>
  <regex>MSPUB.exe</regex>
  <description>Command Line process spawned from Mircosoft Publisher Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule> 
 
  <rule id="255012" level="12">
  <if_sid>255000</if_sid>
  <regex>POWERPNT.exe</regex>
  <description>Powershell Spawned from Powerpoint Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule>
 
  <rule id="255013" level="12">
  <if_sid>255000</if_sid>
  <regex>OUTLOOK.EXE</regex>
  <description>Powershell Spawned from Microsoft Outlook</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule>
 
  <rule id="255014" level="12">
  <if_sid>255000</if_sid>
  <regex>MSPUB.exe</regex>
  <description>Powershell Spawned from Microsoft Publisher</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
  </rule>
 
  <rule id="255015" level="12">
  <if_sid>255000</if_sid>
  <regex>VISIO.exe</regex>
  <description>Powershell Spawned from Microsoft Visio</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202</group>
+ <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ </rule>
+
+ <rule id="255016" level="12">
+ <if_sid>255001</if_sid>
+ <match>regsvr32</match>
+ <regex>http</regex>
+ <description>MITRE ATT&CK T1117 - Regsvr32 https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1117/T1117.md</description>
+ <group>MITRE,attack.T1117,</group>
+ </rule>
+
+ <rule id="255017" level="12">
+ <if_sid>255001</if_sid>
+ <match>cscript.exe</match>
+ <regex>http</regex>
+ <description>MITRE ATT&CK T1216 - Signed Script Proxy Execution https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1216/T1216.md</description>
+ <group>MITRE,attack.T1216,</group>
+ </rule>
+
+ <rule id="255018" level="8">
+ <if_sid>255001</if_sid>
+ <match>sc.exe</match>
+ <regex>\\create||\\start||\\delete<</regex>
+ <description>New Service Created with sc.exe : MITRE ATT&CK T1035 - Service Execution https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1035/T1035.md</description>
+ <group>MITRE,attack.T1035,</group>
+ </rule>
+
+ <rule id="255019" level="8">
+ <if_sid>2550010</if_sid>
+ <match>sc.exe</match>
+ <regex>\\create||\\start||\\delete<</regex>
+ <description>New Service Created with sc.exe : MITRE ATT&CK T1035 - Service Execution https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1035/T1035.md</description>
+ <group>MITRE,attack.T1035,</group>
  </rule>
 
 </group>
