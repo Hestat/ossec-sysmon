@@ -133,7 +133,7 @@
  <rule id="255018" level="8">
  <if_sid>255001</if_sid>
  <match>sc.exe</match>
- <regex>\\create||\\start||\\delete</regex>
+ <regex>create|start|delete</regex>
  <description>New Service Created with sc.exe : MITRE ATT&CK T1035 - Service Execution https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1035/T1035.md</description>
  <group>MITRE,attack.T1035,</group>
  </rule>
@@ -141,7 +141,7 @@
  <rule id="255019" level="8">
  <if_sid>255000</if_sid>
  <match>sc.exe</match>
- <regex>\\create||\\start||\\delete</regex>
+ <regex>create|start|delete</regex>
  <description>New Service Created with sc.exe : MITRE ATT&CK T1035 - Service Execution https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1035/T1035.md</description>
  <group>MITRE,attack.T1035,</group>
  </rule>
