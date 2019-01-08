@@ -146,13 +146,5 @@
  <group>MITRE,attack.T1035,</group>
  </rule>
 
- <rule id="255020" level="8">
- <if_group>sysmon_event1</if_group>
- <field name="sysmon.image">\\WMIC.exe</field>
- <regex>process call create</regex>
- <description>Using WMIC for process creation</description>
- <group>MITRE,</group>
- </rule>
-
 </group>
 
