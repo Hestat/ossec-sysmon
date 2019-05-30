@@ -19,7 +19,7 @@
  <rule id="255202" level="8">
  <if_group>sysmon_event1</if_group>
  <field name="sysmon.image">\\WMIC.exe</field>
- <regex>/NAMESPACE:\\root\directory\ldap PATH ds_user</regex>
+ <regex>/NAMESPACE:\\\\root\\directory\\ldap PATH ds_user</regex>
  <description>Using WMIC for Domain User Enumeration: https://attack.mitre.org/techniques/T1047/</description>
  <group>MITRE,attack.T1047</group>
  </rule>
@@ -27,7 +27,7 @@
  <rule id="255203" level="8">
  <if_group>sysmon_event1</if_group>
  <field name="sysmon.image">\\WMIC.exe</field>
- <regex>/NAMESPACE:\\root\directory\ldap PATH ds_group</regex>
+ <regex>/NAMESPACE:\\\\root\\directory\\ldap PATH ds_group</regex>
  <description>Using WMIC for Domain Group Enumeration: https://attack.mitre.org/techniques/T1047/</description>
  <group>MITRE,attack.T1047</group>
  </rule>
@@ -62,3 +62,11 @@
  <description>WMI persistence Script Event Consumer File Write : https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/ </description>
  <group>MITRE,attack.T1084</group>
  </rule>
+
+ <rule id="255208" level="10">
+ <if_sid>255000</if_sid>
+ <field name="sysmon.parentImage">\\WmiPrvSE.exe</field>
+ <description>WmiPrvSE event spawning powershell</description>
+ <group>MITRE,attack.T1047</group>
+ </rule>
+

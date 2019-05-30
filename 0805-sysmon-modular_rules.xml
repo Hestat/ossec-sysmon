@@ -1,482 +1,482 @@
 <group name="sysmon-modular,">
 
-<rule id="255500" level="10">
+<rule id="255500" level="5">
  <if_group>sysmon_event3</if_group>
  <match>T1055,technique_name=Process Injection</match>
  <description>MITRE T1055 Process Injection: $(sysmon.image)</description>
  <group>MITRE,attack.t1055,</group>
  </rule>
 
- <rule id="255501" level="10">
+ <rule id="255501" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1036,technique_name=Masquerading</match>
  <description>MITRE T1036 Masquerading: $(sysmon.image)</description>
  <group>MITRE,attack.t1036,</group>
  </rule>
 
- <rule id="255502" level="10">
+ <rule id="255502" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1003,technique_name=Credential Dumping</match>
  <description>MITRE T1003 Credential Dumping: $(sysmon.image)</description>
  <group>MITRE,attack.t1003,</group>
  </rule>
 
- <rule id="255503" level="10">
+ <rule id="255503" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1004,technique_name=Winlogon Helper DLL</match> 
  <description>MITRE T1004 Winlogon Helper DLL: $(sysmon.image)</description>
  <group>MITRE,attack.t1004,</group>
  </rule>
 
- <rule id="255504" level="10">
+ <rule id="255504" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1005,technique_name=Data from Local System</match>
  <description>MITRE T1005 Data from Local System: $(sysmon.image)</description>
  <group>MITRE,attack.t1005,</group>
  </rule>
 
- <rule id="255505" level="10">
+ <rule id="255505" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1007,technique_name=System Service Discovery</match>
  <description>MITRE T1007 System Service Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1007,</group>
  </rule>
 
- <rule id="255506" level="10">
+ <rule id="255506" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1012,technique_name=Query Registry</match>
  <description>MITRE T1012 Query registry: $(sysmon.image)</description>
  <group>MITRE,attack.t1012,</group>
  </rule>
 
- <rule id="255507" level="10">
+ <rule id="255507" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1013,technique_name=Forced Authentication</match>
  <description>MITRE T1013 Forced Authentication: $(sysmon.image)</description>
  <group>MITRE,attack.t1013,</group>
  </rule>
 
- <rule id="255508" level="10">
+ <rule id="255508" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1015,technique_name=Accessibility Features</match>
  <description>MITRE T1015 Accessibility Features: $(sysmon.image)</description>
  <group>MITRE,attack.t1015,</group>
  </rule>
 
- <rule id="255509" level="10">
+ <rule id="255509" level="5">
  <if_group>sysmon_event3</if_group>
  <match>T1016,technique_name=System Network Configuration Discovery</match>
  <description>MITRE T1016 System Network Configuration Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1016,</group>
  </rule>
 
- <rule id="255510" level="10">
+ <rule id="255510" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1018,technique_name=Remote System Discovery</match>
  <description>MITRE T1018 Remote Systen Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1018,</group>
  </rule>
 
- <rule id="255511" level="10">
+ <rule id="255511" level="5">
  <if_group>sysmon_event2</if_group>
  <match>T1021,technique_name=Remote Services</match>
  <description>MITRE T1021 Remote Services : $(sysmon.image)</description>
  <group>MITRE,attack.t1021,</group>
  </rule>
 
- <rule id="255512" level="10">
+ <rule id="255512" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1027,technique_name=Obfuscated Files or Information</match>
  <description>MITRE T1027 Obfuscated Files or Information : $(sysmon.image)</description>
  <group>MITRE,attack.t1027,</group>
  </rule>
 
- <rule id="255513" level="10">
+ <rule id="255513" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1028,technique_name=Windows Remote Management</match>
  <description>MITRE T1028 Windows Remote Management: $(sysmon.image)</description>
  <group>MITRE,attack.t1028,</group>
  </rule>
 
- <rule id="255514" level="10">
+ <rule id="255514" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1031,technique_name=Modify Existing Service</match>
  <description>MITRE T1031 Modify Existing Service : $(sysmon.image)</description>
  <group>MITRE,attack.t1031,</group>
  </rule>
 
- <rule id="255515" level="10">
+ <rule id="255515" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1033,technique_name=System Owner/User Discovery</match>
  <description>MITRE T1033 System Owner/User Discovery : $(sysmon.image)</description>
  <group>MITRE,attack.t1033,</group>
  </rule>
 
- <rule id="255516" level="10">
+ <rule id="255516" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1035,technique_name=Service Execution</match>
  <description>MITRE T1035 Service Execution: $(sysmon.image)</description>
  <group>MITRE,attack.t1035,</group>
  </rule>
 
- <rule id="255517" level="10">
+ <rule id="255517" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1037,technique_name=Logon Scripts</match>
  <description>MITRE T1037 Logon Scripts: $(sysmon.image)</description>
  <group>MITRE,attack.t1037,</group>
  </rule>
 
- <rule id="255518" level="10">
+ <rule id="255518" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1042,technique_name=Change Default File Association</match>
  <description>MITRE T1042 Change Default File Association: $(sysmon.image)</description>
  <group>MITRE,attack.t1042,</group>
  </rule>
 
- <rule id="255519" level="10">
+ <rule id="255519" level="5">
  <if_group>sysmon_event3</if_group>
  <match>T1047,technique_name=Windows Management Instrumentation</match>
  <description>MITRE T1047 Windows Management Instrumentation : $(sysmon.image)</description>
  <group>MITRE,attack.t1047,</group>
  </rule>
 
- <rule id="255520" level="10">
+ <rule id="255520" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1049,technique_name=System Network Connections Discovery</match>
  <description>MITRE T1049 System Network Connections Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1049,</group>
  </rule>
 
- <rule id="255521" level="10">
+ <rule id="255521" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1053,technique_name=Scheduled Task</match>
  <description>MITRE T1053 Scheduled Task: $(sysmon.image)</description>
  <group>MITRE,attack.t1053,</group>
  </rule>
 
- <rule id="255522" level="10">
+ <rule id="255522" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1054,technique_name=Indicator Blocking</match>
  <description>MITRE T1054 Indicator Blocking : $(sysmon.image)</description>
  <group>MITRE,attack.t1054,</group>
  </rule>
 
- <rule id="255523" level="10">
+ <rule id="255523" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1057,technique_name=Process Discovery</match>
  <description>MITRE T1057 Process Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1057,</group>
  </rule>
 
- <rule id="255524" level="10">
+ <rule id="255524" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1059,technique_name=Command-Line Interface</match>
  <description>MITRE T1059 Command-Line Interface: $(sysmon.image)</description>
  <group>MITRE,attack.t1059,</group>
  </rule>
 
- <rule id="255525" level="10">
+ <rule id="255525" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1060,technique_name=Registry Run Keys / Start Folder</match>
  <description>MITRE T1060 Registry Run Keys / Start Folder: $(sysmon.image)</description>
  <group>MITRE,attack.t1060,</group>
  </rule>
 
- <rule id="255526" level="10">
+ <rule id="255526" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1063,technique_name=Security Software Discovery</match>
  <description>MITRE T1063 Security Software Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1063,</group>
  </rule>
 
- <rule id="255527" level="10">
+ <rule id="255527" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1069,technique_name=Permission Groups Discovery</match>
  <description>MITRE T1069 Permission Groups Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1069,</group>
  </rule>
 
- <rule id="255528" level="10">
+ <rule id="255528" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1070,technique_name=Indicator Removal on Host</match>
  <description>MITRE T1070 Indicator Removal on Host: $(sysmon.image)</description>
  <group>MITRE,attack.t1070,</group>
  </rule>
 
- <rule id="255529" level="10">
+ <rule id="255529" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1083,technique_name=File and Directory Discovery</match>
  <description>MITRE T1083 File and Directory Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1083,</group>
  </rule>
 
- <rule id="255530" level="10">
+ <rule id="255530" level="5">
  <if_group>sysmon_event3</if_group>
  <match>T1085,technique_name=Rundll32</match>
  <description>MITRE T1085 Rundll32: $(sysmon.image)</description>
  <group>MITRE,attack.t1085,</group>
  </rule>
 
- <rule id="255531" level="10">
+ <rule id="255531" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1086,technique_name=PowerShell</match>
  <description>MITRE T1086 Powershell: $(sysmon.image)</description>
  <group>MITRE,attack.t1086,</group>
  </rule>
 
- <rule id="255532" level="10">
+ <rule id="255532" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1088,technique_name=Bypass User Account Control</match>
  <description>MITRE T1088 Bypass User Account Control: $(sysmon.image)</description>
  <group>MITRE,attack.t1088,</group>
  </rule>
 
- <rule id="255533" level="10">
+ <rule id="255533" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1089,technique_name=Disabling Security Tools</match>
  <description>MITRE T1089 Disabling Security Tools: $(sysmon.image)</description>
  <group>MITRE,attack.t1089,</group>
  </rule>
 
- <rule id="255534" level="10">
+ <rule id="255534" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1098,technique_name=Account Manipulation</match>
  <description>MITRE T1098 =Account Manipulation: $(sysmon.image)</description>
  <group>MITRE,attack.t1098,</group>
  </rule>
 
- <rule id="255535" level="10">
+ <rule id="255535" level="5">
  <if_group>sysmon_event2</if_group>
  <match>T1099,technique_name=Timestomp</match>
  <description>MITRE T1099 Timestomp: $(sysmon.image)</description>
  <group>MITRE,attack.t1099,</group>
  </rule>
 
- <rule id="255536" level="10">
+ <rule id="255536" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1101,technique_name=Security Support Provider</match>
  <description>MITRE T1101 Security Support Provider: $(sysmon.image)</description>
  <group>MITRE,attack.t1101,</group>
  </rule>
 
- <rule id="255537" level="10">
+ <rule id="255537" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1103,technique_name=Appinit DLLs</match>
  <description>MITRE T1103 Appinit DLLs: $(sysmon.image)</description>
  <group>MITRE,attack.t1103,</group>
  </rule>
 
- <rule id="255538" level="10">
+ <rule id="255538" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1105,technique_name=Remote File Copy</match>
  <description>MITRE T1105 Remote File Copy: $(sysmon.image)</description>
  <group>MITRE,attack.t1105,</group>
  </rule>
 
- <rule id="255539" level="10">
+ <rule id="255539" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1112,technique_name=Modify Registry</match>
  <description>MITRE T1112 Modify Registry: $(sysmon.image)</description>
  <group>MITRE,attack.t1112,</group>
  </rule>
 
- <rule id="255540" level="10">
+ <rule id="255540" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1117,technique_name=Regsvr32</match>
  <description>MITRE T1117 Regsvr32: $(sysmon.image)</description>
  <group>MITRE,attack.t1117,</group>
  </rule>
 
- <rule id="255541" level="10">
+ <rule id="255541" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1118,technique_name=InstallUtil</match>
  <description>MITRE T1118 InstallUtil: $(sysmon.image)</description>
  <group>MITRE,attack.t1118,</group>
  </rule>
 
- <rule id="255542" level="10">
+ <rule id="255542" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1121,technique_name=Regsvcs/Regasm</match>
  <description>MITRE T1121 Regsvcs/Regasm: $(sysmon.image)</description>
  <group>MITRE,attack.t1121,</group>
  </rule>
 
- <rule id="255543" level="10">
+ <rule id="255543" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1122,technique_name=Component Object Model Hijacking</match>
  <description>MITRE T1122 Component Object Model Hijacking: $(sysmon.image)</description>
  <group>MITRE,attack.t1122,</group>
  </rule>
 
- <rule id="255544" level="10">
+ <rule id="255544" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1127,technique_name=Trusted Developer Utilities</match>
  <description>MITRE T1127 Trusted Developer Utilities: $(sysmon.image)</description>
  <group>MITRE,attack.t1127,</group>
  </rule>
 
- <rule id="255545" level="10">
+ <rule id="255545" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1128,technique_name=Netsh Helper DLL</match>
  <description>MITRE T1128 Netsh Helper DLL: $(sysmon.image)</description>
  <group>MITRE,attack.t1128,</group>
  </rule>
 
- <rule id="255546" level="10">
+ <rule id="255546" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1130,technique_name=Install Root Certificate</match>
  <description>MITRE T1130 Install Root Certificate: $(sysmon.image)</description>
  <group>MITRE,attack.t1130,</group>
  </rule>
 
- <rule id="255547" level="10">
+ <rule id="255547" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1131,technique_name=Authentication Package</match>
  <description>MITRE T1131 Authentication Package: $(sysmon.image)</description>
  <group>MITRE,attack.t1131,</group>
  </rule>
 
- <rule id="255548" level="10">
+ <rule id="255548" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1134,technique_name=Access Token Manipulation</match>
  <description>MITRE T1134 Access Token Manipulation: $(sysmon.image)</description>
  <group>MITRE,attack.t1134,</group>
  </rule>
 
- <rule id="255549" level="10">
+ <rule id="255549" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1138,technique_name=Application Shimming</match>
  <description>MITRE T1138 Application Shimming: $(sysmon.image)</description>
  <group>MITRE,attack.t1138,</group>
  </rule>
 
- <rule id="255550" level="10">
+ <rule id="255550" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1158,technique_name=Hidden Files and DirectoriesHidden Files and Directories</match>
  <description>MITRE T1158 Hidden Files and DirectoriesHidden Files and Directories: $(sysmon.image)</description>
  <group>MITRE,attack.t1158,</group>
  </rule>
 
- <rule id="255551" level="10">
+ <rule id="255551" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1170,technique_name=Mshta</match>
  <description>MITRE T1170 Mshta: $(sysmon.image)</description>
  <group>MITRE,attack.t1170,</group>
  </rule>
 
- <rule id="255552" level="10">
+ <rule id="255552" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1182,technique_name=AppCert DLLs</match>
  <description>MITRE T1182: $(sysmon.image)</description>
  <group>MITRE,attack.t1182,</group>
  </rule>
 
- <rule id="255553" level="10">
+ <rule id="255553" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1183,technique_name=Image File Execution Options Injection</match>
  <description>MITRE T1183 Image File Execution Options Injection: $(sysmon.image)</description>
  <group>MITRE,attack.t1183,</group>
  </rule>
 
- <rule id="255554" level="10">
+ <rule id="255554" level="5">
  <if_group>sysmon_event_11</if_group>
  <match>T1187,technique_name=Forced Authentication</match>
  <description>MITRE T1187 Forced Authentication: $(sysmon.image)</description>
  <group>MITRE,attack.t1187,</group>
  </rule>
 
- <rule id="255555" level="10">
+ <rule id="255555" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1191,technique_name=CMSTP</match>
  <description>MITRE T1191 CMSTP: $(sysmon.image)</description>
  <group>MITRE,attack.t1191,</group>
  </rule>
 
- <rule id="255556" level="10">
+ <rule id="255556" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1196,technique_name=Control Panel Items</match>
  <description>MITRE T1196: $(sysmon.image)</description>
  <group>MITRE,attack.t1196,</group>
  </rule>
 
- <rule id="255557" level="10">
+ <rule id="255557" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1197,technique_name=BITS Jobs</match>
  <description>MITRE T1197 BITS Jobs: $(sysmon.image)</description>
  <group>MITRE,attack.t1197,</group>
  </rule>
 
- <rule id="255558" level="10">
+ <rule id="255558" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1198,technique_name=SIP and Trust Provider Hijacking</match>
  <description>MITRE T1198 SIP and Trust Provider Hijacking: $(sysmon.image)</description>
  <group>MITRE,attack.t1198,</group>
  </rule>
 
- <rule id="255559" level="10">
+ <rule id="255559" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1202,technique_name=Indirect Command Execution</match>
  <description>MITRE T1202 Indirect Command Execution: $(sysmon.image)</description>
  <group>MITRE,attack.t1202,</group>
  </rule>
 
- <rule id="255560" level="10">
+ <rule id="255560" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>T1209,technique_name=Time Providers</match>
  <description>MITRE T1209 Time Providers: $(sysmon.image)</description>
  <group>MITRE,attack.t1209,</group>
  </rule>
 
- <rule id="255561" level="10">
+ <rule id="255561" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1218,technique_name=Regsvr32</match>
  <description>MITRE T1218 Regsvr32: $(sysmon.image)</description>
  <group>MITRE,attack.t1218,</group>
  </rule>
 
- <rule id="255562" level="10">
+ <rule id="255562" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1218,technique_name=Signed Binary Proxy Execution</match>
  <description>MITRE T1218 Signed Binary Proxy Execution: $(sysmon.image)</description>
  <group>MITRE,attack.t1218,</group>
  </rule>
 
- <rule id="255563" level="10">
+ <rule id="255563" level="5">
  <if_group>sysmon_event1</if_group>
  <match>T1218,technique_name=Signed Script Proxy Execution</match>
  <description>MITRE T1218 Signed Script Proxy Execution: $(sysmon.image)</description>
  <group>MITRE,attack.t1218,</group>
  </rule>
 
- <rule id="255564" level="10">
+ <rule id="255564" level="5">
  <if_group>sysmon_event3</if_group>
  <match>T1036,technique_name=Masquerading</match>
  <description>MITRE T1036 Masquerading: $(sysmon.image)</description>
  <group>MITRE,attack.t1036,</group>
  </rule>
 
- <rule id="255565" level="10">
+ <rule id="255565" level="5">
  <if_group>sysmon_event3</if_group>
  <match>T1016,technique_name=System Network Configuration Discovery</match>
  <description>MITRE T1016 System Network Configuration Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1016,</group>
  </rule>
 
- <rule id="255566" level="10">
+ <rule id="255566" level="5">
  <if_group>sysmon_event3</if_group>
  <match>T1028,technique_name=Windows Remote Management</match>
  <description>MITRE T1028 Windows Remote Management: $(sysmon.image)</description>
  <group>MITRE,attack.t1028,</group>
  </rule>
 
- <rule id="255567" level="10">
+ <rule id="255567" level="5">
  <if_group>sysmon_event3</if_group>
  <match>T1035,technique_name=Service Execution</match>
  <description>MITRE T1035 Service Execution: $(sysmon.image)</description>
  <group>MITRE,attack.t1035,</group>
  </rule>
 
- <rule id="255568" level="10">
+ <rule id="255568" level="5">
  <if_group>sysmon_event3</if_group>
  <match>T1218,technique_name=Regsvr32</match>
  <description>MITRE T1218 Regsvr32: $(sysmon.image)</description>
