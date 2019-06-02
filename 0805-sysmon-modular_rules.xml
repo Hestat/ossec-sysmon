@@ -23,7 +23,7 @@
 
  <rule id="255503" level="5">
  <if_group>sysmon_event_12</if_group>
- <match>T1004,technique_name=Winlogon Helper DLL</match> 
+ <match>T1004,technique_name=Winlogon Helper DLL</match>
  <description>MITRE T1004 Winlogon Helper DLL: $(sysmon.image)</description>
  <group>MITRE,attack.t1004,</group>
  </rule>
@@ -428,7 +428,7 @@
  </rule>
 
  <rule id="255561" level="5">
- <if_group>sysmon_event1</if_group>
+ <if_group>sysmon</if_group>
  <match>T1218,technique_name=Regsvr32</match>
  <description>MITRE T1218 Regsvr32: $(sysmon.image)</description>
  <group>MITRE,attack.t1218,</group>
@@ -441,9 +441,9 @@
  <group>MITRE,attack.t1218,</group>
  </rule>
 
- <rule id="255563" level="5">
- <if_group>sysmon_event1</if_group>
- <match>T1218,technique_name=Signed Script Proxy Execution</match>
+ <rule id="255563" level="10">
+ <if_group>sysmon</if_group>
+ <match>T1218,technique_name=Signed Binary Proxy Execution</match>
  <description>MITRE T1218 Signed Script Proxy Execution: $(sysmon.image)</description>
  <group>MITRE,attack.t1218,</group>
  </rule>
@@ -456,21 +456,21 @@
  </rule>
 
  <rule id="255565" level="5">
- <if_group>sysmon_event3</if_group>
+ <if_group>sysmon</if_group>
  <match>T1016,technique_name=System Network Configuration Discovery</match>
  <description>MITRE T1016 System Network Configuration Discovery: $(sysmon.image)</description>
  <group>MITRE,attack.t1016,</group>
  </rule>
 
  <rule id="255566" level="5">
- <if_group>sysmon_event3</if_group>
+ <if_group>sysmon</if_group>
  <match>T1028,technique_name=Windows Remote Management</match>
  <description>MITRE T1028 Windows Remote Management: $(sysmon.image)</description>
  <group>MITRE,attack.t1028,</group>
  </rule>
 
  <rule id="255567" level="5">
- <if_group>sysmon_event3</if_group>
+ <if_group>sysmon</if_group>
  <match>T1035,technique_name=Service Execution</match>
  <description>MITRE T1035 Service Execution: $(sysmon.image)</description>
  <group>MITRE,attack.t1035,</group>
@@ -482,5 +482,4 @@
  <description>MITRE T1218 Regsvr32: $(sysmon.image)</description>
  <group>MITRE,attack.t1218,</group>
  </rule>
- 
-</group>
+ </group>

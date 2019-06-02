@@ -1,3 +1,4 @@
+<group name="WMI,">
 
 
  <rule id="255200" level="12">
@@ -70,3 +71,4 @@
  <group>MITRE,attack.T1047</group>
  </rule>
 
+</group>

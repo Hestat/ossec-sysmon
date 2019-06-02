@@ -1,0 +1,12 @@
+<group name="privesc,">
+
+ <rule id="255600" level="12">
+ <if_sid>255531</if_sid>
+ <regex>\\csc.exe</regex>
+ <match>cmdline</match>
+ <description>Suspected Priveledge Escalation</description>
+ <group>MITRE,attack.T1055,</group>
+ </rule>
+
+ </group>
+
