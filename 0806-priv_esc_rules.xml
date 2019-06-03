@@ -4,7 +4,7 @@
  <if_sid>255531</if_sid>
  <regex>\\csc.exe</regex>
  <match>cmdline</match>
- <description>Suspected Priveledge Escalation</description>
+ <description>ATT&CK T1055: Suspected Shellcode and potential process injection or process injection</description>
  <group>MITRE,attack.T1055,</group>
  </rule>
 

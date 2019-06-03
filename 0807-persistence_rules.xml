@@ -1,0 +1,10 @@
+<group name="persistence,">
+
+ <rule id="255700" level="10">
+ <if_group>sysmon_event_13</if_group>
+ <regex>services.exe</regex>
+ <description>ATT&CK T1058:Registry edit for new service</description>
+ <group>MITRE,attack.T1058</group>
+ </rule>
+
+</group>
