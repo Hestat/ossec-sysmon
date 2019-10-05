@@ -66,7 +66,7 @@
 
  <rule id="255208" level="10">
  <if_sid>255000</if_sid>
- <field name="sysmon.parentImage">\\WmiPrvSE.exe</field>
+ <field name="win.eventdata.parentImage">\\WmiPrvSE.exe</field>
  <description>WmiPrvSE event spawning powershell</description>
  <group>MITRE,attack.T1047</group>
  </rule>
