@@ -2,15 +2,15 @@
 	
  <rule id="255000" level="6">
  <if_group>sysmon_event1</if_group>
- <field name="sysmon.image">\\powershell.exe||\\.ps1||\\.ps2</field>
- <description>Sysmon - Event 1: Powershell exe: $(sysmon.image)</description>
+ <field name="win.eventdata.sourceImage">\\powershell.exe||\\.ps1||\\.ps2</field>
+ <description>Sysmon - Event 1: Powershell exe: $(win.eventdata.sourceImage)</description>
  <group>sysmon_event1,powershell_execution,</group>
  </rule>
 
  <rule id="255001" level="6">
  <if_group>sysmon_event1</if_group>
- <field name="sysmon.image">\\cmd.exe</field>
- <description>Sysmon - Event 2: CMD exe: $(sysmon.image)</description>
+ <field name="win.eventdata.sourceImage">\\cmd.exe</field>
+ <description>Sysmon - Event 2: CMD exe: $(win.eventdata.sourceImage)</description>
  <group>sysmon_event1,cmd_execution,</group>
  </rule>
 
