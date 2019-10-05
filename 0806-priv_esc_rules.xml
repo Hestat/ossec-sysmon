@@ -1,12 +1,13 @@
+
 <group name="privesc,">
 
  <rule id="255600" level="12">
  <if_sid>255531</if_sid>
  <regex>\\csc.exe</regex>
  <match>cmdline</match>
- <description>ATT&CK T1055: Suspected Shellcode and potential process injection or process injection</description>
+ <description>ATT&CK T1055: Suspected Shellcode Compile on Endpoint</description>
  <group>MITRE,attack.T1055,</group>
  </rule>
 
- </group>
+</group>
 

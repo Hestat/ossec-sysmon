@@ -1,3 +1,4 @@
+
 <group name="Defense Evasion,">
 
  <rule id="255800" level="10">
@@ -16,4 +17,4 @@
  <group>MITRE,attack.T1170</group>
  </rule>
 
- </group>
+</group>

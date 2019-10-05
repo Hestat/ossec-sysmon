@@ -1,3 +1,4 @@
+
 <group name="sysmon,MITRE,">
 	
  <rule id="255000" level="6">

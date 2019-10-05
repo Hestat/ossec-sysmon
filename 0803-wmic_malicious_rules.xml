@@ -1,5 +1,5 @@
-<group name="WMI,">
 
+<group name="WMI,">
 
  <rule id="255200" level="12">
  <if_group>sysmon_event1</if_group>

@@ -1,3 +1,5 @@
+<group name="Defense Evasion,Windows Defender">
+
  <rule id="255300" level="10">
  <if_sid>18101</if_sid>
  <regex>Windows Defender Antivirus Real-time Protection scanning for malware and other potentially unwanted software was disabled</regex>
@@ -19,3 +21,5 @@
  <description>Windows Defender: C:\ Path Excluded, check for malware: https://attack.mitre.org/techniques/T1089/</description>
  <group>gdpr_IV_35.7.d,MITRE,attack.T1089,</group>
  </rule>
+
+</group>
