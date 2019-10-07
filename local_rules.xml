@@ -660,6 +660,13 @@
  <group>MITRE,attack.T1075</group>
  </rule>
 
+ <rule id="255106" level="10">
+ <if_group>sysmon_event_11</if_group>
+ <regex>\\Temp\\debug.bin</regex>
+ <description>Detects possible SafetyKatz Behaviour</description>
+ <group>MITRE,attack.t1003,sigma</group>
+ </rule>
+
 </group>
 
 <group name="WMI,">
@@ -776,12 +783,21 @@
 
 <group name="persistence,">
 
- <rule id="255700" level="10">
+ <rule id="255700" level="9">
  <if_group>sysmon_event_13</if_group>
  <regex>services.exe</regex>
  <description>ATT&CK T1058:Registry edit for new service</description>
  <group>MITRE,attack.T1058</group>
  </rule>
+
+
+ <rule id="255701" level="12">
+ <if_sid>255700</if_sid>
+ <field name="win.eventdata.details">\\.exe</field>
+ <description>ATT&CK T1058:Executable written to Registry for Persistence</description>
+ <group>MITRE,attack.T1058</group>
+ </rule>
+
 
 </group>
 
@@ -801,6 +817,16 @@
  <regex>chrome.exe</regex>
  <description>ATT&CK T1170: MSHTA execution demiguise techniques</description>
  <group>MITRE,attack.T1170</group>
+ </rule>
+
+</group>
+<group name="execution,">
+
+ <rule id="255901" level="10">
+ <if_sid>255531</if_sid>
+ <regex>powershell -enco</regex>
+ <description>ATT&CK T1059: Powershell execution techniques using base64 and  "-enco"</description>
+ <group>MITRE,attack.T1059</group>
  </rule>
 
 </group>

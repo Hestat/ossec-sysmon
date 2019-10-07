@@ -1,11 +1,20 @@
 
 <group name="persistence,">
 
- <rule id="255700" level="10">
+ <rule id="255700" level="9">
  <if_group>sysmon_event_13</if_group>
  <regex>services.exe</regex>
  <description>ATT&CK T1058:Registry edit for new service</description>
  <group>MITRE,attack.T1058</group>
  </rule>
+
+
+ <rule id="255701" level="12">
+ <if_sid>255700</if_sid>
+ <field name="win.eventdata.details">\\.exe</field>
+ <description>ATT&CK T1058:Executable written to Registry for Persistence</description>
+ <group>MITRE,attack.T1058</group>
+ </rule>
+
 
 </group>

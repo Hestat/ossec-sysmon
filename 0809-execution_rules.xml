@@ -1,0 +1,10 @@
+<group name="execution,">
+
+ <rule id="255901" level="10">
+ <if_sid>255531</if_sid>
+ <regex>powershell -enco</regex>
+ <description>ATT&CK T1059: Powershell execution techniques using base64 and  "-enco"</description>
+ <group>MITRE,attack.T1059</group>
+ </rule>
+
+</group>
