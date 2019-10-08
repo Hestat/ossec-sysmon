@@ -832,7 +832,7 @@
 
  <rule id="255902" level="12">
  <if_sid>255531</if_sid>
- <regex>powershell -noP -sta -w 1 -enc</regex>
+ <regex>-noP -sta -w 1 -enc</regex>
  <description>ATT&CK T1059: Powershell execution techniques default PowerShell Empire launcher</description>
  <group>MITRE,attack.T1059</group>
  </rule>
@@ -846,14 +846,14 @@
 
  <rule id="255904" level="12">
  <if_sid>255531</if_sid>
- <regex>powershell -exec bypass -Noninteractive -windowstyle hidden -e</regex>
+ <regex>-exec bypass -Noninteractive -windowstyle hidden -e</regex>
  <description>ATT&CK T1059: Powershell execution techniques default Posh C2 launcher</description>
  <group>MITRE,attack.T1059</group>
  </rule>
 
  <rule id="255905" level="12">
  <if_sid>255531</if_sid>
- <regex>powershell //w 1</regex>
+ <regex>/w 1</regex>
  <match>value.toString</match>
  <description>ATT&CK T1059: Powershell execution techniques default Unicorn Powershell Meterpreter launcher</description>
  <group>MITRE,attack.T1059</group>

@@ -31,7 +31,7 @@
 
  <rule id="255905" level="12">
  <if_sid>255531</if_sid>
- <regex>//w 1</regex>
+ <regex>/w 1</regex>
  <match>value.toString</match>
  <description>ATT&CK T1059: Powershell execution techniques default Unicorn Powershell Meterpreter launcher</description>
  <group>MITRE,attack.T1059</group>
