@@ -1,10 +1,41 @@
 <group name="execution,">
 
- <rule id="255901" level="10">
+ <rule id="255901" level="12">
  <if_sid>255531</if_sid>
  <regex>powershell -enco</regex>
- <description>ATT&CK T1059: Powershell execution techniques using base64 and  "-enco"</description>
+ <description>ATT&CK T1059: Powershell execution techniques using base64 and  "-enco" seen with Emotet</description>
  <group>MITRE,attack.T1059</group>
  </rule>
+
+
+ <rule id="255902" level="12">
+ <if_sid>255531</if_sid>
+ <regex>powershell -noP -sta -w 1 -enc</regex>
+ <description>ATT&CK T1059: Powershell execution techniques default PowerShell Empire launcher</description>
+ <group>MITRE,attack.T1059</group>
+ </rule>
+
+ <rule id="255903" level="10">
+ <if_group>sysmon_event1</if_group>
+ <regex>certutil -urlcache -split -f </regex>
+ <description>ATT&CK T1059: CertUtil Download Technique</description>
+ <group>MITRE,attack.T1059</group>
+ </rule>
+
+ <rule id="255904" level="12">
+ <if_sid>255531</if_sid>
+ <regex>powershell -exec bypass -Noninteractive -windowstyle hidden -e</regex>
+ <description>ATT&CK T1059: Powershell execution techniques default Posh C2 launcher</description>
+ <group>MITRE,attack.T1059</group>
+ </rule>
+
+ <rule id="255905" level="12">
+ <if_sid>255531</if_sid>
+ <regex>powershell //w 1</regex>
+ <match>value.toString</match>
+ <description>ATT&CK T1059: Powershell execution techniques default Unicorn Powershell Meterpreter launcher</description>
+ <group>MITRE,attack.T1059</group>
+ </rule>
+
 
 </group>
