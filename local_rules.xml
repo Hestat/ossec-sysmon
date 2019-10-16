@@ -824,8 +824,8 @@
 
  <rule id="255901" level="12">
  <if_sid>255531</if_sid>
- <regex>powershell -enco</regex>
- <description>ATT&CK T1059: Powershell execution techniques using base64 and  "-enco" seen with Emotet</description>
+ <regex>-e PAA|-en PAA|-enc PAA|-enco PAA|-encod PAA|JABlAG4AdgA6AHUAcwBlAHIAcAByAG8AZgBpAGwAZQ|QAZQBuAHYAOgB1AHMAZQByAHAAcgBvAGYAaQBsAGUA|kAGUAbgB2ADoAdQBzAGUAcgBwAHIAbwBmAGkAbABlA|IgAoACcAKgAnACkAOwAkA|IAKAAnACoAJwApADsAJA|iACgAJwAqACcAKQA7ACQA</regex>
+ <description>ATT&CK T1059: Powershell execution techniques seen with Emotet malware</description>
  <group>MITRE,attack.T1059</group>
  </rule>
 
