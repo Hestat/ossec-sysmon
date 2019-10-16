@@ -45,27 +45,3 @@ Compress-Archive -Path $trace01, $log01, $log02, $log03, -CompressionLevel Optim
 #####
 #Clear logs
 #Clear-EventLog Microsoft-Windows-Sysmon/Operational
-
-
-$bucket = 'blazescan-signatures'
-$source = $location
-$region = 'us-west-2'
-
-Initialize-AWSDefaultConfiguration -Region $region
- 
-Set-Location $source
-$files = Get-ChildItem '*.bak' | Select-Object -Property Name
-try {
-   if(Test-S3Bucket -BucketName $bucket) {
-      foreach($file in $files) {
-         if(!(Get-S3Object -BucketName $bucket -Key $file.Name)) { ## verify if exist
-            Write-Host "Copying file : $file "
-            Write-S3Object -BucketName $bucket -File $file.Name -Key $file.Name -CannedACLName private
-         } 
-      }
-   } Else {
-      Write-Host "The bucket $bucket does not exist."
-   }
-} catch {
-   Write-Host "Error uploading file $file"
-}
