@@ -40,7 +40,7 @@ wevtutil.exe epl "Microsoft-Windows-Windows Defender/Operational" $log03
 
 ####
 #Zip up our collected data
-Compress-Archive -Path $trace01, $log01, $log02, $log03, -CompressionLevel Optimal -DestinationPath $location\$env:USERNAME-$(get-date -f yyyy-MM-dd-hh-mm).zip
+Compress-Archive -Path $trace01, $log01, $log02, $log03 -CompressionLevel Optimal -DestinationPath $location\$env:USERNAME-$(get-date -f yyyy-MM-dd-hh-mm).zip
 
 #####
 #Clear logs
