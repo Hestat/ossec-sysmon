@@ -37,5 +37,18 @@
  <group>MITRE,attack.T1059</group>
  </rule>
 
+ <rule id="255906" level="9">
+    <if_sid>60100</if_sid>
+    <field name="win.system.eventID">^400$</field>
+    <regex>PowerShell</regex>
+    <description>Windows PowerShell was started.</description>
+ </rule>
+
+ <rule id="255907" level="9">
+    <if_sid>60100</if_sid>
+    <field name="win.system.eventID">^800$</field>
+    <regex>PowerShell</regex>
+    <description>Windows PowerShell command executed.</description>
+ </rule>
 
 </group>

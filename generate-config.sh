@@ -10,7 +10,7 @@ R332=$(pwd)/0332-credential_access_rules.xml
 R803=$(pwd)/0803-wmic_malicious_rules.xml
 R804=$(pwd)/0804-defender_bypass.xml
 R805=$(pwd)/0805-sysmon-modular_rules.xml
-R805v9=$(pwd)/0805-v9-sysmon-modular_rules.xml
+R805v10=$(pwd)/0805-v10-sysmon-modular_rules.xml
 R806=$(pwd)/0806-priv_esc_rules.xml
 R807=$(pwd)/0807-persistence_rules.xml
 R808=$(pwd)/0808-defense_evasion_rules.xml
@@ -23,7 +23,7 @@ echo -e "=== Generating Configuration file ===\n"
 touch $RULESFILE
 
 echo -e "Adding: \n$R331\n"; cat $R331 >> $RULESFILE
-echo -e "Adding: \n$R805v9\n"; cat $R805v9 >> $RULESFILE
+echo -e "Adding: \n$R805v10\n"; cat $R805v10 >> $RULESFILE
 echo -e "Adding: \n$R332\n"; cat $R332 >> $RULESFILE
 echo -e "Adding: \n$R803\n"; cat $R803 >> $RULESFILE
 echo -e "Adding: \n$R804\n"; cat $R804 >> $RULESFILE
