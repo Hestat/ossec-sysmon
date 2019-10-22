@@ -491,4 +491,11 @@
  <group>MITRE,attack.t1043,</group>
  </rule>
 
+ <rule id="255570" level="5">
+ <if_group>sysmon_event3</if_group>
+ <match>technique_name=PowerShell</match>
+ <description>MITRE T1086 Powershell Network Connection: $(win.eventdata.sourceImage)</description>
+ <group>MITRE,attack.t1086,</group>
+ </rule>
+
  </group>
