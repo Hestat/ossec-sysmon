@@ -19,8 +19,8 @@
  <rule id="255702" level="12">
  <if_group>sysmon_event_11</if_group>
  <match>\\Programs\\Startup</match>
- <description>ATT&CK T1058: Potential Persistence Method via Startup Folder</description>
- <group>MITRE,attack.T1058</group>
+ <description>ATT&CK T1060: Potential Persistence Method via Startup Folder</description>
+ <group>MITRE,attack.T1060</group>
  </rule>
 
 
