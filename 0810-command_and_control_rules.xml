@@ -1,10 +1,10 @@
 <group name="command and control">
 
-<rule id="256000" level="10">
-  <if_group>json</if_group>
-  <list field="data.win.eventdata.destinationIp" lookup="address_match_key">etc/lists/Test-list</list>
-  <description>IP connection to blacklist</description>
-  <group>list1,</group>
+<rule id="256000" level="14">
+  <if_group>sysmon_event3</if_group>
+  <list field="win.eventdata.destinationIp" lookup="address_match_key">etc/lists/emotet-list</list>
+  <description>IP connection to Emotet Command and Control</description>
+  <group>emotet,</group>
 </rule>
 
 </group>
