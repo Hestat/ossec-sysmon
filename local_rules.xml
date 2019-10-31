@@ -813,6 +813,14 @@
  <group>MITRE,attack.T1058</group>
  </rule>
 
+ <rule id="255702" level="12">
+ <if_group>sysmon_event_11</if_group>
+ <match>\\Programs\\Startup</match>
+ <description>ATT&CK T1060: Potential Persistence Method via Startup Folder</description>
+ <group>MITRE,attack.T1060</group>
+ </rule>
+
+
 
 </group>
 
@@ -886,6 +894,27 @@
     <field name="win.system.eventID">^800$</field>
     <regex>PowerShell</regex>
     <description>Windows PowerShell command executed.</description>
+ </rule>
+ 
+ <rule id="255910" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc</regex>
+ <description>Potential Emotet Execuatble running detection</description>
+ <group>MITRE,execution</group>
+ </rule>
+
+ <rule id="255911" level="12">
+ <if_group>sysmon_event3</if_group>
+ <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|vertclient</regex>
+ <description>Potential Emotet Execuatble running detection</description>
+ <group>MITRE,execution</group>
+ </rule>
+
+ <rule id="255912" level="12">
+ <field name="win.eventdata.currentDirectory">AppData\\Roaming</field>
+ <regex>ipconfig|workstation|domain_trusts</regex>
+ <description>Potential Trickbot Execuatble running local and domain reconasiance</description>
+ <group>MITRE,execution</group>
  </rule>
 
 </group>

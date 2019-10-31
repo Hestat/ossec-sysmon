@@ -50,5 +50,26 @@
     <regex>PowerShell</regex>
     <description>Windows PowerShell command executed.</description>
  </rule>
+ 
+ <rule id="255910" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc</regex>
+ <description>Potential Emotet Execuatble running detection</description>
+ <group>MITRE,execution</group>
+ </rule>
+
+ <rule id="255911" level="12">
+ <if_group>sysmon_event3</if_group>
+ <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|vertclient</regex>
+ <description>Potential Emotet Execuatble running detection</description>
+ <group>MITRE,execution</group>
+ </rule>
+
+ <rule id="255912" level="12">
+ <field name="win.eventdata.currentDirectory">AppData\\Roaming</field>
+ <regex>ipconfig|workstation|domain_trusts</regex>
+ <description>Potential Trickbot Execuatble running local and domain reconasiance</description>
+ <group>MITRE,execution</group>
+ </rule>
 
 </group>
