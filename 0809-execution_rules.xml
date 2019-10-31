@@ -53,14 +53,14 @@
  
  <rule id="255910" level="12">
  <if_group>sysmon_event1</if_group>
- <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc</regex>
+ <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|cablesongs</regex>
  <description>Potential Emotet Execuatble running detection</description>
  <group>MITRE,execution</group>
  </rule>
 
  <rule id="255911" level="12">
  <if_group>sysmon_event3</if_group>
- <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|vertclient</regex>
+ <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|vertclient|cablesongs</regex>
  <description>Potential Emotet Execuatble running detection</description>
  <group>MITRE,execution</group>
  </rule>
@@ -69,6 +69,20 @@
  <field name="win.eventdata.currentDirectory">AppData\\Roaming</field>
  <regex>ipconfig|workstation|domain_trusts</regex>
  <description>Potential Trickbot Execuatble running local and domain reconasiance</description>
+ <group>MITRE,execution</group>
+ </rule>
+
+  <rule id="255913" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>Roaming\\NuiGet|Roaming\\HomeLan|Roaming\\netRest|Roaming\\netcloud|Roaming\\netRest</regex>
+ <description>Potential Emotet Executable running detection</description>
+ <group>MITRE,execution</group>
+ </rule>
+
+ <rule id="255914" level="12">
+ <if_group>sysmon_event3</if_group>
+ <regex>Roaming\\NuiGet|Roaming\\HomeLan|Roaming\\netRest|Roaming\\netcloud|Roaming\\netRest</regex>
+ <description>Potential Emotet Executable running detection</description>
  <group>MITRE,execution</group>
  </rule>
 
