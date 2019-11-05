@@ -842,6 +842,21 @@
  <group>MITRE,attack.T1170</group>
  </rule>
 
+ <rule id="255802" level="10">
+ <if_group>sysmon_event1</if_group>
+ <regex>firewall set opmode mode=disable</regex>
+ <description>ATT&CK T1089: Disabling the Windows Firewall</description>
+ <group>MITRE,attack.T1089</group>
+ </rule>
+
+ <rule id="255803" level="10">
+ <if_group>sysmon_event1</if_group>
+ <regex>advfirewall set currentprofile state off</regex>
+ <description>ATT&CK T1089: Disabling the Windows Firewall</description>
+ <group>MITRE,attack.T1089</group>
+ </rule>
+
+
 </group>
 <group name="execution,">
 
@@ -898,14 +913,14 @@
  
  <rule id="255910" level="12">
  <if_group>sysmon_event1</if_group>
- <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|cablesongs</regex>
+ <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|cablesongs|mscmsknown</regex>
  <description>Potential Emotet Execuatble running detection</description>
  <group>MITRE,execution</group>
  </rule>
 
  <rule id="255911" level="12">
  <if_group>sysmon_event3</if_group>
- <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|vertclient|cablesongs</regex>
+ <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|vertclient|cablesongs|mscmsknown</regex>
  <description>Potential Emotet Execuatble running detection</description>
  <group>MITRE,execution</group>
  </rule>
@@ -930,5 +945,57 @@
  <description>Potential Emotet Executable running detection</description>
  <group>MITRE,execution</group>
  </rule>
+
+ <rule id="255915" level="12">
+ <if_sid>255531</if_sid>
+ <regex>RwBlAHQALQBXAG0AaQBPAGIAagBlAGMAdAAgAFcAaQBuADMAMgBfAFMAaABhAGQAbwB3AGMAbwBwAHkAIAB8ACAARgBvAHIARQBhAGMAaAAtAE8AYgBqAGUAYwB0ACAAewAkAF8ALgBEAGUAbABlAHQAZQAoACkAOwB9AA==</regex>
+ <description>ATT&CK T1486: Powershell Ransomware technique to delete shadow copies seen in Sodinokibi strains</description>
+ <group>MITRE,attack.T1486,ransomware</group>
+ </rule>
+
+ <rule id="255916" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>WMIC.exe shadowcopy delete</regex>
+ <description>ATT&CK T1486: WMIC Ransomware technique to delete shadow copies seen in Robinhood strains</description>
+ <group>MITRE,attack.T1486,ransomware</group>
+ </rule>
+
+ <rule id="255917" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>vssadmin delete shadows /all /quiet</regex>
+ <description>ATT&CK T1486:Ransomware technique to delete shadow copies</description>
+ <group>MITRE,attack.T1486,ransomware</group>
+ </rule>
+
+ <rule id="255918" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>/c Bcdedit.exe /set {default} recoveryenabled no</regex>
+ <description>ATT&CK T1486:Ransomware technique to delete backups seen in Robinhood strains</description>
+ <group>MITRE,attack.T1486,ransomware</group>
+ </rule>
+
+ <rule id="255919" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>wbadmin  delete catalog -quiet</regex>
+ <description>ATT&CK T1486:Ransomware technique to delete backups seen in Wannacry strains</description>
+ <group>MITRE,attack.T1486,ransomware</group>
+ </rule>
+
+ <rule id="255920" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>icacls . /grant Everyone:F /T /C /Q</regex>
+ <description>ATT&CK T1486:Ransomware technique to grant all permissions seen in Wannacry strains</description>
+ <group>MITRE,attack.T1486,ransomware</group>
+ </rule>
+
+ <rule id="255921" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>gandcrab.bit|ransomware.bit|carder.bit</regex>
+ <description>ATT&CK T1486:Ransomware technique to look up Ransomware Domains seen in Gandcrab strain</description>
+ <group>MITRE,attack.T1486,ransomware</group>
+ </rule>
+
+
+
 
 </group>

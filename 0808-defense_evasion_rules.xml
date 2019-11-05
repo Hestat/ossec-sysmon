@@ -17,4 +17,19 @@
  <group>MITRE,attack.T1170</group>
  </rule>
 
+ <rule id="255802" level="10">
+ <if_group>sysmon_event1</if_group>
+ <regex>firewall set opmode mode=disable</regex>
+ <description>ATT&CK T1089: Disabling the Windows Firewall</description>
+ <group>MITRE,attack.T1089</group>
+ </rule>
+
+ <rule id="255803" level="10">
+ <if_group>sysmon_event1</if_group>
+ <regex>advfirewall set currentprofile state off</regex>
+ <description>ATT&CK T1089: Disabling the Windows Firewall</description>
+ <group>MITRE,attack.T1089</group>
+ </rule>
+
+
 </group>
