@@ -135,6 +135,12 @@
  <group>MITRE,attack.T1486,ransomware</group>
  </rule>
 
+ <rule id="255922" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>EQNEDT32.EXE</regex>
+ <description>ATT&CK T1173: Potential use of Microsoft Equation Editor for Exploitation</description>
+ <group>MITRE,attack.T1173,</group>
+ </rule>
 
 
 
