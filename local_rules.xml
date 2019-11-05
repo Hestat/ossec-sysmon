@@ -682,6 +682,14 @@
  <group>MITRE,attack.t1003,sigma</group>
  </rule>
 
+ <rule id="255107" level="10">
+ <if_group>sysmon_event_10</if_group>
+ <field name="win.eventdata.targetImage">\\lsass.exe</field>
+ <description>ATT&CK T1003: Detects possible Mimikatz Activity</description>
+ <group>MITRE,attack.t1003,</group>
+ </rule>
+
+
 </group>
 
 <group name="WMI,">
