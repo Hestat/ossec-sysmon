@@ -22,11 +22,11 @@ ps >> $log01
 #####
 #Collect 5 minutes of network activity (will be in microsoft event trace format, use the microsoft message analyzer to read)
 #Or use the commented out section below to move to pcap
-netsh trace start persistent=yes capture=yes traceFile=$trace01
+#netsh trace start persistent=yes capture=yes traceFile=$trace01
 #change sleep if you want to gather data for a longer or shorter time frame
-sleep 300
+#sleep 300
 
-netsh trace stop
+#netsh trace stop
 
 #need microsoft message analyzer for this
 #$s = New-PefTraceSession -Path $pcap01 -SaveOnStop
@@ -40,8 +40,21 @@ wevtutil.exe epl "Microsoft-Windows-Windows Defender/Operational" $log03
 
 ####
 #Zip up our collected data
-Compress-Archive -Path $trace01, $log01, $log02, $log03 -CompressionLevel Optimal -DestinationPath $location\$env:USERNAME-$(get-date -f yyyy-MM-dd-hh-mm).zip
+Compress-Archive -Path $log01, $log02, $log03 -CompressionLevel Optimal -DestinationPath $location\$env:USERNAME-$(get-date -f yyyy-MM-dd-hh-mm).zip
+$TargetFilePath="/$env:USERNAME-$(get-date -f yyyy-MM-dd-hh-mm).zip"
+$SourceFilePath="$location\$env:USERNAME-$(get-date -f yyyy-MM-dd-hh-mm).zip"
+$arg = '{ "path": "' + $TargetFilePath + '", "mode": "add", "autorename": true, "mute": false }'
+$authorization = "Bearer " + "enter_token"
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Authorization", $authorization)
+$headers.Add("Dropbox-API-Arg", $arg)
+$headers.Add("Content-Type", 'application/octet-stream')
+Invoke-RestMethod -Uri https://content.dropboxapi.com/2/files/upload -Method Post -InFile $SourceFilePath -Headers $headers
 
 #####
 #Clear logs
 #Clear-EventLog Microsoft-Windows-Sysmon/Operational
+#rm $SourceFilePath
+#rm $log01
+#rm $log02
+#rm $log03
