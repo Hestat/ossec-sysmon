@@ -149,11 +149,11 @@
  <group>MITRE,attack.T1117</group>
  </rule>
 
-  <rule id="255924" level="12">
+ <rule id="255924" level="12">
  <if_sid>255901</if_sid>
- <regex></regex>
- <description>ATT&CK T1486: Powershell Ransomware technique to delete shadow copies seen in Sodinokibi strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <regex>IwBwAGEAY</regex>
+ <description>ATT&CK T1059: Powershell Signature Matching Ursnif Malware</description>
+ <group>MITRE,attack.T1059</group>
  </rule>
 
  <rule id="255925" level="5">
