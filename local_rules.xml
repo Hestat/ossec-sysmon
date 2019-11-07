@@ -27,28 +27,28 @@
  <if_sid>255000</if_sid>
  <regex>.doc</regex>
  <description>Powershell Spawned from Office Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255004" level="12">
  <if_sid>255000</if_sid>
  <regex>.xls</regex>
  <description>Powershell Spawned from Excel Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255005" level="12">
  <if_sid>255001</if_sid>
  <regex>WINWORD.EXE</regex>
  <description>Command Line process spawned from Mircosoft Word Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255006" level="12">
  <if_sid>255001</if_sid>
  <regex>EXCEL.EXE</regex>
  <description>Command Line process spawned from Mircosoft Excel Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255007" level="10">
@@ -56,63 +56,63 @@
  <match>mshta.exe</match>
  <regex>http</regex>
  <description>Possible Malicious HTA file executed</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1170,</group>
+ <group>MITRE,attack.t1170,</group>
  </rule>
 
  <rule id="255008" level="12">
  <if_sid>255001</if_sid>
  <regex>POWERPNT.exe</regex>
  <description>Command Line process spawned from Mircosoft Powerpoint Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255009" level="12">
  <if_sid>255001</if_sid>
  <regex>OUTLOOK.EXE</regex>
  <description>Command Line process spawned from Mircosoft Outlook</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule> 
 
  <rule id="255010" level="12">
  <if_sid>255001</if_sid>
  <regex>VISIO.exe</regex>
  <description>Command Line process spawned from Mircosoft Visio Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule> 
 
  <rule id="255011" level="12">
  <if_sid>255001</if_sid>
  <regex>MSPUB.exe</regex>
  <description>Command Line process spawned from Mircosoft Publisher Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule> 
 
  <rule id="255012" level="12">
  <if_sid>255000</if_sid>
  <regex>POWERPNT.exe</regex>
  <description>Powershell Spawned from Powerpoint Doc</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255013" level="12">
  <if_sid>255000</if_sid>
  <regex>OUTLOOK.EXE</regex>
  <description>Powershell Spawned from Microsoft Outlook</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202</group>
  </rule>
 
  <rule id="255014" level="12">
  <if_sid>255000</if_sid>
  <regex>MSPUB.exe</regex>
  <description>Powershell Spawned from Microsoft Publisher</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255015" level="12">
  <if_sid>255000</if_sid>
  <regex>VISIO.exe</regex>
  <description>Powershell Spawned from Microsoft Visio</description>
- <group>MITRE,attack.execution,attack.defense_evasion,attack.t1059,attack.T1202,</group>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255016" level="12">
@@ -120,7 +120,7 @@
  <match>regsvr32</match>
  <regex>http</regex>
  <description>MITRE ATT&CK T1117 - Regsvr32 https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1117/T1117.md</description>
- <group>MITRE,attack.T1117,</group>
+ <group>MITRE,attack.t1117,</group>
  </rule>
 
  <rule id="255017" level="12">
@@ -128,7 +128,7 @@
  <match>cscript.exe</match>
  <regex>http</regex>
  <description>MITRE ATT&CK T1216 - Signed Script Proxy Execution https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1216/T1216.md</description>
- <group>MITRE,attack.T1216,</group>
+ <group>MITRE,attack.t1216,</group>
  </rule>
 
  <rule id="255018" level="8">
@@ -136,7 +136,7 @@
  <match>sc.exe</match>
  <regex>create|start|delete</regex>
  <description>New Service Created with sc.exe : MITRE ATT&CK T1035 - Service Execution https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1035/T1035.md</description>
- <group>MITRE,attack.T1035,</group>
+ <group>MITRE,attack.t1035,</group>
  </rule>
 
  <rule id="255019" level="8">
@@ -144,7 +144,7 @@
  <match>sc.exe</match>
  <regex>create|start|delete</regex>
  <description>New Service Created with sc.exe : MITRE ATT&CK T1035 - Service Execution https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1035/T1035.md</description>
- <group>MITRE,attack.T1035,</group>
+ <group>MITRE,attack.t1035,</group>
  </rule>
 
 </group>
@@ -523,7 +523,7 @@
  <group>MITRE,attack.t1182,</group>
  </rule>
 
- <rule id="255553" level="5">
+ <rule id="255553" level="12">
  <if_group>sysmon_event_12</if_group>
  <match>technique_name=Image File Execution Options Injection</match>
  <description>MITRE T1183 Image File Execution Options Injection: $(win.eventdata.sourceImage)</description>
@@ -658,21 +658,21 @@
  <field name="win.eventdata.sourceImage">\\findstr.exe</field>
  <regex>cpassword</regex>
  <description>Finding Passwords in SYSVOL & Exploiting Group Policy Preferences : MITRE ATT&CK T1081 - https://adsecurity.org/?p=2288</description>
- <group>MITRE,attack.T1081,</group>
+ <group>MITRE,attack.t1081,</group>
  </rule>
 
  <rule id="255104" level="10">
  <if_sid>255547</if_sid>
  <regex>HKLM\\System\\CurrentControlSet\\Control\\Lsa\\LMCompatibilityLevel</regex>
  <description>ATT&CK T1075: Edit to registry key potentially downgrading NTLM authentication, potential Internal Monologue attack https://github.com/eladshamir/Internal-Monologue</description>
- <group>MITRE,attack.T1075</group>
+ <group>MITRE,attack.t1075</group>
  </rule>
 
  <rule id="255105" level="10">
  <if_sid>255547</if_sid>
  <regex>HKLM\\System\\CurrentControlSet\\Control\\Lsa\\MSV1_0\\RestrictSendingNTLMTraffic</regex>
  <description>ATT&CK T1075: Edit to registry key potentially downgrading NTLM authentication, potential Internal Monologue attack https://github.com/eladshamir/Internal-Monologue</description>
- <group>MITRE,attack.T1075</group>
+ <group>MITRE,attack.t1075</group>
  </rule>
 
  <rule id="255106" level="10">
@@ -696,6 +696,13 @@
  <group>MITRE,attack.t1003,</group>
  </rule>
 
+ <rule id="255109" level="0">
+ <if_sid>255107</if_sid>
+ <field name="win.eventdata.sourceImage">\\MsMpEng.exe|\\ossec-agent.exe|\\wininit.exe|\\csrss.exe</field>
+ <description>Whitelist Interaction with LSASS</description>
+ <group>MITRE,attack.t1003,</group>
+ </rule>
+
 
 </group>
 
@@ -706,7 +713,7 @@
  <field name="win.eventdata.sourceImage">\\WMIC.exe</field>
  <regex>process call create</regex>
  <description>Using WMIC for process creation: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.T1047</group>
+ <group>MITRE,attack.t1047</group>
  </rule>
 
  <rule id="255201" level="12">
@@ -714,7 +721,7 @@
  <field name="win.eventdata.sourceImage">\\WMIC.exe</field>
  <regex>/namespace:\\root\securitycenter2 path antivirusproduct</regex>
  <description>Using WMIC for Antivirus Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.T1047</group>
+ <group>MITRE,attack.t1047</group>
  </rule> 
 
  <rule id="255202" level="8">
@@ -722,7 +729,7 @@
  <field name="win.eventdata.sourceImage">\\WMIC.exe</field>
  <regex>/NAMESPACE:\\\\root\\directory\\ldap PATH ds_user</regex>
  <description>Using WMIC for Domain User Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.T1047</group>
+ <group>MITRE,attack.t1047</group>
  </rule>
 
  <rule id="255203" level="8">
@@ -730,7 +737,7 @@
  <field name="win.eventdata.sourceImage">\\WMIC.exe</field>
  <regex>/NAMESPACE:\\\\root\\directory\\ldap PATH ds_group</regex>
  <description>Using WMIC for Domain Group Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.T1047</group>
+ <group>MITRE,attack.t1047</group>
  </rule>
 
  <rule id="255204" level="8">
@@ -738,7 +745,7 @@
  <field name="win.eventdata.sourceImage">\\WMIC.exe</field>
  <regex>USERACCOUNT</regex>
  <description>Using WMIC for Local Account Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.T1047</group>
+ <group>MITRE,attack.t1047</group>
  </rule>
 
  <rule id="255205" level="8">
@@ -746,7 +753,7 @@
  <field name="win.eventdata.sourceImage">\\WMIC.exe</field>
  <regex>NTDOMAIN</regex>
  <description>Using WMIC for Domain Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.T1047</group>
+ <group>MITRE,attack.t1047</group>
  </rule>
 
  <rule id="255206" level="8">
@@ -754,21 +761,21 @@
  <field name="win.eventdata.sourceImage">\\WMIC.exe</field>
  <regex>gfe list brief</regex>
  <description>Using WMIC for Host Patch Level Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.T1047</group>
+ <group>MITRE,attack.t1047</group>
  </rule>
 
  <rule id="255207" level="8">
  <if_group>sysmon_event1</if_group>
  <field name="win.eventdata.sourceImage">\\scrcons.exe</field>
  <description>WMI persistence Script Event Consumer File Write : https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/ </description>
- <group>MITRE,attack.T1084</group>
+ <group>MITRE,attack.t1084</group>
  </rule>
 
  <rule id="255208" level="10">
  <if_sid>255000</if_sid>
  <field name="win.eventdata.parentImage">\\WmiPrvSE.exe</field>
  <description>WmiPrvSE event spawning powershell</description>
- <group>MITRE,attack.T1047</group>
+ <group>MITRE,attack.t1047</group>
  </rule>
 
 </group>
@@ -778,14 +785,14 @@
  <if_sid>18101</if_sid>
  <regex>Windows Defender Antivirus Real-time Protection scanning for malware and other potentially unwanted software was disabled</regex>
  <description>Windows Defender: Realtime Detection Disabled: https://attack.mitre.org/techniques/T1089/</description>
- <group>gdpr_IV_35.7.d,MITRE,attack.T1089,</group>
+ <group>gdpr_IV_35.7.d,MITRE,attack.t1089,</group>
  </rule>
 
  <rule id="255301" level="12">
  <if_sid>83000</if_sid>
  <id>3002</id>
  <description>Windows Defender: Antivirus Rules Missing: https://attack.mitre.org/techniques/T1089/</description>
- <group>MITRE,attack.T1089</group>
+ <group>MITRE,attack.t1089</group>
  </rule>
 
  <rule id="255302" level="10">
@@ -793,7 +800,7 @@
  <id>5007</id>
  <regex>C:\\ = 0x0</regex>
  <description>Windows Defender: C:\ Path Excluded, check for malware: https://attack.mitre.org/techniques/T1089/</description>
- <group>gdpr_IV_35.7.d,MITRE,attack.T1089,</group>
+ <group>gdpr_IV_35.7.d,MITRE,attack.t1089,</group>
  </rule>
 
 </group>
@@ -805,7 +812,7 @@
  <regex>\\csc.exe</regex>
  <match>cmdline</match>
  <description>ATT&CK T1055: Suspected Shellcode Compile on Endpoint</description>
- <group>MITRE,attack.T1055,</group>
+ <group>MITRE,attack.t1055,</group>
  </rule>
 
 </group>
@@ -817,7 +824,7 @@
  <if_group>sysmon_event_13</if_group>
  <regex>services.exe</regex>
  <description>ATT&CK T1058:Registry edit for new service</description>
- <group>MITRE,attack.T1058</group>
+ <group>MITRE,attack.t1058</group>
  </rule>
 
 
@@ -825,14 +832,14 @@
  <if_sid>255700</if_sid>
  <field name="win.eventdata.details">\\.exe</field>
  <description>ATT&CK T1058:Executable written to Registry for Persistence</description>
- <group>MITRE,attack.T1058</group>
+ <group>MITRE,attack.t1058</group>
  </rule>
 
  <rule id="255702" level="12">
  <if_group>sysmon_event_11</if_group>
  <match>\\Programs\\Startup</match>
  <description>ATT&CK T1060: Potential Persistence Method via Startup Folder</description>
- <group>MITRE,attack.T1060</group>
+ <group>MITRE,attack.t1060</group>
  </rule>
 
 
@@ -846,7 +853,7 @@
  <field name="win.eventdata.sourceImage">\\mshta.exe</field>
  <regex>browser_broker.exe</regex>
  <description>ATT&CK T1170: MSHTA execution demiguise techniques</description>
- <group>MITRE,attack.T1170</group>
+ <group>MITRE,attack.t1170</group>
  </rule>
 
  <rule id="255801" level="10">
@@ -854,21 +861,21 @@
  <field name="win.eventdata.sourceImage">\\mshta.exe</field>
  <regex>chrome.exe</regex>
  <description>ATT&CK T1170: MSHTA execution demiguise techniques</description>
- <group>MITRE,attack.T1170</group>
+ <group>MITRE,attack.t1170</group>
  </rule>
 
  <rule id="255802" level="10">
  <if_group>sysmon_event1</if_group>
  <regex>firewall set opmode mode=disable</regex>
  <description>ATT&CK T1089: Disabling the Windows Firewall</description>
- <group>MITRE,attack.T1089</group>
+ <group>MITRE,attack.t1089</group>
  </rule>
 
  <rule id="255803" level="10">
  <if_group>sysmon_event1</if_group>
  <regex>advfirewall set currentprofile state off</regex>
  <description>ATT&CK T1089: Disabling the Windows Firewall</description>
- <group>MITRE,attack.T1089</group>
+ <group>MITRE,attack.t1089</group>
  </rule>
 
 
@@ -879,7 +886,7 @@
  <if_sid>255531</if_sid>
  <regex>-e PAA|-en PAA|-enc PAA|-enco PAA|-encod PAA|JABlAG4AdgA6AHUAcwBlAHIAcAByAG8AZgBpAGwAZQ|QAZQBuAHYAOgB1AHMAZQByAHAAcgBvAGYAaQBsAGUA|kAGUAbgB2ADoAdQBzAGUAcgBwAHIAbwBmAGkAbABlA|IgAoACcAKgAnACkAOwAkA|IAKAAnACoAJwApADsAJA|iACgAJwAqACcAKQA7ACQA</regex>
  <description>ATT&CK T1059: Powershell execution techniques seen with Emotet malware</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
 
@@ -887,21 +894,21 @@
  <if_sid>255531</if_sid>
  <regex>-noP -sta -w 1 -enc</regex>
  <description>ATT&CK T1059: Powershell execution techniques default PowerShell Empire launcher</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
  <rule id="255903" level="10">
  <if_group>sysmon_event1</if_group>
  <regex>certutil -urlcache -split -f </regex>
  <description>ATT&CK T1059: CertUtil Download Technique</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
  <rule id="255904" level="12">
  <if_sid>255531</if_sid>
  <regex>-exec bypass -Noninteractive -windowstyle hidden -e</regex>
  <description>ATT&CK T1059: Powershell execution techniques default Posh C2 launcher</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
  <rule id="255905" level="12">
@@ -909,7 +916,7 @@
  <regex>/w 1</regex>
  <match>value.toString</match>
  <description>ATT&CK T1059: Powershell execution techniques default Unicorn Powershell Meterpreter launcher</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
  <rule id="255906" level="9">
@@ -965,52 +972,84 @@
  <if_sid>255531</if_sid>
  <regex>RwBlAHQALQBXAG0AaQBPAGIAagBlAGMAdAAgAFcAaQBuADMAMgBfAFMAaABhAGQAbwB3AGMAbwBwAHkAIAB8ACAARgBvAHIARQBhAGMAaAAtAE8AYgBqAGUAYwB0ACAAewAkAF8ALgBEAGUAbABlAHQAZQAoACkAOwB9AA==</regex>
  <description>ATT&CK T1486: Powershell Ransomware technique to delete shadow copies seen in Sodinokibi strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <group>MITRE,attack.t1486,ransomware</group>
  </rule>
 
  <rule id="255916" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>WMIC.exe shadowcopy delete</regex>
  <description>ATT&CK T1486: WMIC Ransomware technique to delete shadow copies seen in Robinhood strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <group>MITRE,attack.t1486,ransomware</group>
  </rule>
 
  <rule id="255917" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>vssadmin delete shadows /all /quiet</regex>
  <description>ATT&CK T1486:Ransomware technique to delete shadow copies</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <group>MITRE,attack.t1486,ransomware</group>
  </rule>
 
  <rule id="255918" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>/c Bcdedit.exe /set {default} recoveryenabled no</regex>
  <description>ATT&CK T1486:Ransomware technique to delete backups seen in Robinhood strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <group>MITRE,attack.t1486,ransomware</group>
  </rule>
 
  <rule id="255919" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>wbadmin  delete catalog -quiet</regex>
  <description>ATT&CK T1486:Ransomware technique to delete backups seen in Wannacry strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <group>MITRE,attack.t1486,ransomware</group>
  </rule>
 
  <rule id="255920" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>icacls . /grant Everyone:F /T /C /Q</regex>
  <description>ATT&CK T1486:Ransomware technique to grant all permissions seen in Wannacry strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <group>MITRE,attack.t1486,ransomware</group>
  </rule>
 
  <rule id="255921" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>gandcrab.bit|ransomware.bit|carder.bit</regex>
  <description>ATT&CK T1486:Ransomware technique to look up Ransomware Domains seen in Gandcrab strain</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <group>MITRE,attack.t1486,ransomware</group>
  </rule>
 
+ <rule id="255922" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>EQNEDT32.EXE</regex>
+ <description>ATT&CK T1173: Potential use of Microsoft Equation Editor for Exploitation</description>
+ <group>MITRE,attack.t1173,</group>
+ </rule>
 
+ <rule id="255923" level="12">
+ <if_sid>255561</if_sid>
+ <field name="win.eventdata.parentImage">\\powershell.exe</field>
+ <description>ATT&CK T1117: Regsrv32 execution spawned from Powershell (Ursnif IOC)</description>
+ <group>MITRE,attack.t1117</group>
+ </rule>
 
+ <rule id="255924" level="12">
+ <if_sid>255901</if_sid>
+ <regex>IwBwAGEAY</regex>
+ <description>ATT&CK T1059: Powershell Signature Matching Ursnif Malware</description>
+ <group>MITRE,attack.t1059</group>
+ </rule>
+
+ <rule id="255925" level="5">
+ <if_group>sysmon_event1</if_group>
+ <field name="win.eventdata.sourceImage">\\WScript.exe</field>
+ <description>ATT&CK T1064: WScript Execution $(win.eventdata.sourceImage)</description>
+ <group>MITRE,attack.t1064</group>
+ </rule>
+
+ <rule id="255926" level="12">
+ <if_sid>255925</if_sid>
+ <regex>WINWORD.exe</regex>
+ <description>ATT&CK T1064: Word Executing WScript $(win.eventdata.sourceImage)</description>
+ <group>MITRE,attack.t1064</group>
+ </rule>
 
 </group>

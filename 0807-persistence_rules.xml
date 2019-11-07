@@ -5,7 +5,7 @@
  <if_group>sysmon_event_13</if_group>
  <regex>services.exe</regex>
  <description>ATT&CK T1058:Registry edit for new service</description>
- <group>MITRE,attack.T1058</group>
+ <group>MITRE,attack.t1058</group>
  </rule>
 
 
@@ -13,14 +13,14 @@
  <if_sid>255700</if_sid>
  <field name="win.eventdata.details">\\.exe</field>
  <description>ATT&CK T1058:Executable written to Registry for Persistence</description>
- <group>MITRE,attack.T1058</group>
+ <group>MITRE,attack.t1058</group>
  </rule>
 
  <rule id="255702" level="12">
  <if_group>sysmon_event_11</if_group>
  <match>\\Programs\\Startup</match>
  <description>ATT&CK T1060: Potential Persistence Method via Startup Folder</description>
- <group>MITRE,attack.T1060</group>
+ <group>MITRE,attack.t1060</group>
  </rule>
 
 

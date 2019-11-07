@@ -4,7 +4,7 @@
  <if_sid>255531</if_sid>
  <regex>-e PAA|-en PAA|-enc PAA|-enco PAA|-encod PAA|JABlAG4AdgA6AHUAcwBlAHIAcAByAG8AZgBpAGwAZQ|QAZQBuAHYAOgB1AHMAZQByAHAAcgBvAGYAaQBsAGUA|kAGUAbgB2ADoAdQBzAGUAcgBwAHIAbwBmAGkAbABlA|IgAoACcAKgAnACkAOwAkA|IAKAAnACoAJwApADsAJA|iACgAJwAqACcAKQA7ACQA</regex>
  <description>ATT&CK T1059: Powershell execution techniques seen with Emotet malware</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
 
@@ -12,21 +12,21 @@
  <if_sid>255531</if_sid>
  <regex>-noP -sta -w 1 -enc</regex>
  <description>ATT&CK T1059: Powershell execution techniques default PowerShell Empire launcher</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
  <rule id="255903" level="10">
  <if_group>sysmon_event1</if_group>
  <regex>certutil -urlcache -split -f </regex>
  <description>ATT&CK T1059: CertUtil Download Technique</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
  <rule id="255904" level="12">
  <if_sid>255531</if_sid>
  <regex>-exec bypass -Noninteractive -windowstyle hidden -e</regex>
  <description>ATT&CK T1059: Powershell execution techniques default Posh C2 launcher</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
  <rule id="255905" level="12">
@@ -34,7 +34,7 @@
  <regex>/w 1</regex>
  <match>value.toString</match>
  <description>ATT&CK T1059: Powershell execution techniques default Unicorn Powershell Meterpreter launcher</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
  <rule id="255906" level="9">
@@ -89,85 +89,85 @@
  <rule id="255915" level="12">
  <if_sid>255531</if_sid>
  <regex>RwBlAHQALQBXAG0AaQBPAGIAagBlAGMAdAAgAFcAaQBuADMAMgBfAFMAaABhAGQAbwB3AGMAbwBwAHkAIAB8ACAARgBvAHIARQBhAGMAaAAtAE8AYgBqAGUAYwB0ACAAewAkAF8ALgBEAGUAbABlAHQAZQAoACkAOwB9AA==</regex>
- <description>ATT&CK T1486: Powershell Ransomware technique to delete shadow copies seen in Sodinokibi strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <description>ATT&CK T1485: Powershell Ransomware technique to delete shadow copies seen in Sodinokibi strains</description>
+ <group>MITRE,attack.t1485,ransomware</group>
  </rule>
 
  <rule id="255916" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>WMIC.exe shadowcopy delete</regex>
- <description>ATT&CK T1486: WMIC Ransomware technique to delete shadow copies seen in Robinhood strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <description>ATT&CK T1485: WMIC Ransomware technique to delete shadow copies seen in Robinhood strains</description>
+ <group>MITRE,attack.t1485,ransomware</group>
  </rule>
 
  <rule id="255917" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>vssadmin delete shadows /all /quiet</regex>
- <description>ATT&CK T1486:Ransomware technique to delete shadow copies</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <description>ATT&CK T1485:Ransomware technique to delete shadow copies</description>
+ <group>MITRE,attack.t1485,ransomware</group>
  </rule>
 
  <rule id="255918" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>/c Bcdedit.exe /set {default} recoveryenabled no</regex>
- <description>ATT&CK T1486:Ransomware technique to delete backups seen in Robinhood strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <description>ATT&CK T1485:Ransomware technique to delete backups seen in Robinhood strains</description>
+ <group>MITRE,attack.t1485,ransomware</group>
  </rule>
 
  <rule id="255919" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>wbadmin  delete catalog -quiet</regex>
- <description>ATT&CK T1486:Ransomware technique to delete backups seen in Wannacry strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <description>ATT&CK T1485:Ransomware technique to delete backups seen in Wannacry strains</description>
+ <group>MITRE,attack.t1485,ransomware</group>
  </rule>
 
  <rule id="255920" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>icacls . /grant Everyone:F /T /C /Q</regex>
  <description>ATT&CK T1486:Ransomware technique to grant all permissions seen in Wannacry strains</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <group>MITRE,attack.t1486,ransomware</group>
  </rule>
 
  <rule id="255921" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>gandcrab.bit|ransomware.bit|carder.bit</regex>
  <description>ATT&CK T1486:Ransomware technique to look up Ransomware Domains seen in Gandcrab strain</description>
- <group>MITRE,attack.T1486,ransomware</group>
+ <group>MITRE,attack.t1486,ransomware</group>
  </rule>
 
  <rule id="255922" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>EQNEDT32.EXE</regex>
  <description>ATT&CK T1173: Potential use of Microsoft Equation Editor for Exploitation</description>
- <group>MITRE,attack.T1173,</group>
+ <group>MITRE,attack.t1173,</group>
  </rule>
 
  <rule id="255923" level="12">
  <if_sid>255561</if_sid>
  <field name="win.eventdata.parentImage">\\powershell.exe</field>
  <description>ATT&CK T1117: Regsrv32 execution spawned from Powershell (Ursnif IOC)</description>
- <group>MITRE,attack.T1117</group>
+ <group>MITRE,attack.t1117</group>
  </rule>
 
  <rule id="255924" level="12">
  <if_sid>255901</if_sid>
  <regex>IwBwAGEAY</regex>
  <description>ATT&CK T1059: Powershell Signature Matching Ursnif Malware</description>
- <group>MITRE,attack.T1059</group>
+ <group>MITRE,attack.t1059</group>
  </rule>
 
  <rule id="255925" level="5">
  <if_group>sysmon_event1</if_group>
  <field name="win.eventdata.sourceImage">\\WScript.exe</field>
  <description>ATT&CK T1064: WScript Execution $(win.eventdata.sourceImage)</description>
- <group>MITRE,attack.T1064</group>
+ <group>MITRE,attack.t1064</group>
  </rule>
 
  <rule id="255926" level="12">
  <if_sid>255925</if_sid>
  <regex>WINWORD.exe</regex>
  <description>ATT&CK T1064: Word Executing WScript $(win.eventdata.sourceImage)</description>
- <group>MITRE,attack.T1064</group>
+ <group>MITRE,attack.t1064</group>
  </rule>
 
 </group>

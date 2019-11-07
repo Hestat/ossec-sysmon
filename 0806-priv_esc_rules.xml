@@ -6,7 +6,7 @@
  <regex>\\csc.exe</regex>
  <match>cmdline</match>
  <description>ATT&CK T1055: Suspected Shellcode Compile on Endpoint</description>
- <group>MITRE,attack.T1055,</group>
+ <group>MITRE,attack.t1055,</group>
  </rule>
 
 </group>
