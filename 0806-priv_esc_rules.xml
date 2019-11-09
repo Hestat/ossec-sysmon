@@ -9,5 +9,14 @@
  <group>MITRE,attack.t1055,</group>
  </rule>
 
+ <rule id="255600" level="12">
+ <if_sid>255500</if_sid>
+ <field name="win.eventdata.sourceImage">\\powershell.exe</field>
+ <field name="win.eventdata.targetImage">\\rundll32.exe</field>
+ <description>ATT&CK T1055: Suspected Process Injection matching Cobalt Strike methods</description>
+ <group>MITRE,attack.t1055,</group>
+ </rule>
+
+
 </group>
 
