@@ -23,6 +23,22 @@
  <group>MITRE,attack.t1060</group>
  </rule>
 
+ <rule id="255703" level="0">
+ <if_sid>255702</if_sid>
+ <regex>desktop.ini</regex>
+ <description>Startup Folder Whitelist</description>
+ <group>MITRE,attack.t1060</group>
+ </rule>
+
+ <rule id="255704" level="10">
+ <if_group>sysmon_event_11</if_group>
+ <field name="win.eventdata.targetFilename">\\.scr</field>
+ <description>ATT&CK T1180: Screensaver, unusual filetype anamoly .scr file detected</description>
+ <group>MITRE,attack.t1180</group>
+ </rule>
+
+
+
 
 
 </group>
