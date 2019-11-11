@@ -170,4 +170,89 @@
  <group>MITRE,attack.t1064</group>
  </rule>
 
+
+ <rule id="255927" level="12">
+ <if_sid>255531</if_sid>
+ <regex>.doc</regex>
+ <description>Powershell Spawned from Office Doc</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255928" level="12">
+ <if_sid>255531</if_sid>
+ <regex>.xls</regex>
+ <description>Powershell Spawned from Excel Doc</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255929" level="12">
+ <if_sid>255524</if_sid>
+ <regex>WINWORD.EXE</regex>
+ <description>Command Line process spawned from Mircosoft Word Doc</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255930" level="12">
+ <if_sid>255524</if_sid>
+ <regex>EXCEL.EXE</regex>
+ <description>Command Line process spawned from Mircosoft Excel Doc</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255931" level="12">
+ <if_sid>255524</if_sid>
+ <regex>POWERPNT.exe</regex>
+ <description>Command Line process spawned from Mircosoft Powerpoint Doc</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255932" level="12">
+ <if_sid>255524</if_sid>
+ <regex>OUTLOOK.EXE</regex>
+ <description>Command Line process spawned from Mircosoft Outlook</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255933" level="12">
+ <if_sid>255524</if_sid>
+ <regex>VISIO.exe</regex>
+ <description>Command Line process spawned from Mircosoft Visio Doc</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255934" level="12">
+ <if_sid>255524</if_sid>
+ <regex>MSPUB.exe</regex>
+ <description>Command Line process spawned from Mircosoft Publisher Doc</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255935" level="12">
+ <if_sid>255531</if_sid>
+ <regex>POWERPNT.exe</regex>
+ <description>Powershell Spawned from Powerpoint Doc</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255936" level="12">
+ <if_sid>255531</if_sid>
+ <regex>OUTLOOK.EXE</regex>
+ <description>Powershell Spawned from Microsoft Outlook</description>
+ <group>MITRE,attack.t1059,attack.t1202</group>
+ </rule>
+
+ <rule id="255937" level="12">
+ <if_sid>255531</if_sid>
+ <regex>MSPUB.exe</regex>
+ <description>Powershell Spawned from Microsoft Publisher</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
+ <rule id="255938" level="12">
+ <if_sid>255531</if_sid>
+ <regex>VISIO.exe</regex>
+ <description>Powershell Spawned from Microsoft Visio</description>
+ <group>MITRE,attack.t1059,attack.t1202,</group>
+ </rule>
+
 </group>
