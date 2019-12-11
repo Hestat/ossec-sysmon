@@ -255,4 +255,11 @@
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
+ <rule id="255939" level="12">
+ <if_sid>255524</if_sid>
+ <regex>start microsoft-edge:http:</regex>
+ <description>Potential Trickbot behaviour spawning Microsoft Edge via the Commandline</description>
+ <group>MITRE,</group>
+ </rule>
+
 </group>
