@@ -262,4 +262,33 @@
  <group>MITRE,</group>
  </rule>
 
+ <rule id="255940" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>whoami.exe</regex>
+ <match>SYSTEM</match>
+ <description>Whoami ran as SYSTEM user, potential user recon after privelge escalation</description>
+ <group>MITRE,attack.t1033</group>
+ </rule>
+
+ <rule id="255941" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>CollectionMethod All</regex>
+ <description>Bloodhound Active Directory enumeration tool executed</description>
+ <group>MITRE,attack.t1087</group>
+ </rule>
+
+ <rule id="255942" level="12">
+ <if_group>sysmon_event1</if_group>
+ <regex>rar.exe</regex>
+ <description>Rar file archive action detected, potential data being staged for exfiltration</description>
+ <group>MITRE,attack.t1002,attack.t1074</group>
+ </rule>
+
+ <rule id="255943" level="12">
+ <if_group>sysmon_event1</if_group>
+ <match>net.webclient</match>
+ <regex>downloadstring|downloadfile</regex>
+ <description>Potential powershell download anomaly investigate for potentail malware</description>
+ <group>MITRE,attack.t1086</group>
+ </rule>
 </group>
