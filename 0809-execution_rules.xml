@@ -10,7 +10,7 @@
 
  <rule id="255902" level="12">
  <if_sid>255531</if_sid>
- <regex>-noP -sta -w 1 -enc</regex>
+ <regex>-noP -sta -w 1 -enc|-NoP -sta -NonI -W Hidden -Enc|-NoP -NonI -W Hidden -enc</regex>
  <description>ATT&CK T1059: Powershell execution techniques default PowerShell Empire launcher</description>
  <group>MITRE,attack.t1059</group>
  </rule>
