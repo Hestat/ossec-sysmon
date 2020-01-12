@@ -22,4 +22,11 @@
  <group>gdpr_IV_35.7.d,MITRE,attack.t1089,</group>
  </rule>
 
+ <rule id="255303" level="10">
+ <if_sid>60005</if_sid>
+ <id>5001</id>
+ <description>Windows Defender: Realtime Detection Disabled: https://attack.mitre.org/techniques/T1089/</description>
+ <group>gdpr_IV_35.7.d,MITRE,attack.t1089,</group>
+ </rule>
+
 </group>
