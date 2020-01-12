@@ -300,4 +300,11 @@
  <group>MITRE,attack.t1073</group>
  </rule>
 
+ <rule id="255945" level="8">
+ <if_group>sysmon_event7</if_group>
+ <match>false</match>
+ <description>T1073 Potential DLL Side Loading by Unsigned Executable: Image loaded by $(win.eventdata.sourceImage)</description>
+ <group>MITRE,attack.t1073</group>
+ </rule>
+
 </group>
