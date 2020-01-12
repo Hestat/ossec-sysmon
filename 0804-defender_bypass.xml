@@ -1,7 +1,7 @@
 <group name="Defense Evasion,Windows Defender">
 
  <rule id="255300" level="10">
- <if_sid>60005</if_sid>
+ <if_group>windows</if_group>
  <regex>Windows Defender Antivirus Real-time Protection scanning for malware and other potentially unwanted software was disabled</regex>
  <description>Windows Defender: Realtime Detection Disabled: https://attack.mitre.org/techniques/T1089/</description>
  <group>gdpr_IV_35.7.d,MITRE,attack.t1089,</group>
