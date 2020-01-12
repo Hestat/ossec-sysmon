@@ -8,24 +8,17 @@
  </rule>
 
  <rule id="255301" level="12">
- <if_sid>60005</if_sid>
+ <if_group>windows</if_group>
  <id>3002</id>
  <description>Windows Defender: Antivirus Rules Missing: https://attack.mitre.org/techniques/T1089/</description>
  <group>MITRE,attack.t1089</group>
  </rule>
 
  <rule id="255302" level="10">
- <if_sid>60005</if_sid>
+ <if_group>windows</if_group>
  <id>5007</id>
  <regex>C:\\ = 0x0</regex>
  <description>Windows Defender: C:\ Path Excluded, check for malware: https://attack.mitre.org/techniques/T1089/</description>
- <group>gdpr_IV_35.7.d,MITRE,attack.t1089,</group>
- </rule>
-
- <rule id="255303" level="10">
- <if_sid>60005</if_sid>
- <id>5001</id>
- <description>Windows Defender: Realtime Detection Disabled: https://attack.mitre.org/techniques/T1089/</description>
  <group>gdpr_IV_35.7.d,MITRE,attack.t1089,</group>
  </rule>
 
