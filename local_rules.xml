@@ -649,6 +649,13 @@
  <group>MITRE,attack.t1086,</group>
  </rule>
 
+ <rule id="255571" level="5">
+ <if_group>sysmon_event3</if_group>
+ <match>technique_name=Indirect Command Execution</match>
+ <description>MITRE T1202 Indirect Command Execution Network Activity: $(win.eventdata.sourceImage)</description>
+ <group>MITRE,attack.t1202,</group>
+ </rule>
+
  </group>
 
 <group name="credential_access,MITRE,">
@@ -985,6 +992,7 @@
  </rule>
 
  <rule id="255912" level="12">
+ <if_group>sysmon_event1</if_group>
  <field name="win.eventdata.currentDirectory">AppData\\Roaming</field>
  <regex>ipconfig|workstation|domain_trusts</regex>
  <description>Potential Trickbot Execuatble running local and domain reconasiance</description>
@@ -1210,4 +1218,12 @@
  <description>Potential powershell download anomaly investigate for potentail malware</description>
  <group>MITRE,attack.t1086</group>
  </rule>
+
+ <rule id="255944" level="12">
+ <if_group>sysmon_event7</if_group>
+ <match>false</match>
+ <description>T1073 Potential DLL Side Loading by Executable with Revoked Certificate: Image loaded by $(win.eventdata.sourceImage)</description>
+ <group>MITRE,attack.t1073</group>
+ </rule>
+
 </group>
