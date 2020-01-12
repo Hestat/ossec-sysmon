@@ -295,7 +295,7 @@
 
  <rule id="255944" level="12">
  <if_group>sysmon_event7</if_group>
- <match>false</match>
+ <match>Revoked</match>
  <description>T1073 Potential DLL Side Loading by Executable with Revoked Certificate: Image loaded by $(win.eventdata.sourceImage)</description>
  <group>MITRE,attack.t1073</group>
  </rule>
