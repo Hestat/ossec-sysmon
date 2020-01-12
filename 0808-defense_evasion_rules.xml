@@ -3,7 +3,7 @@
 
  <rule id="255800" level="10">
  <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.sourceImage">\\mshta.exe</field>
+ <field name="win.eventdata.image">\\mshta.exe</field>
  <regex>browser_broker.exe</regex>
  <description>ATT&CK T1170: MSHTA execution demiguise techniques</description>
  <group>MITRE,attack.t1170</group>
@@ -11,7 +11,7 @@
 
  <rule id="255801" level="10">
  <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.sourceImage">\\mshta.exe</field>
+ <field name="win.eventdata.image">\\mshta.exe</field>
  <regex>chrome.exe</regex>
  <description>ATT&CK T1170: MSHTA execution demiguise techniques</description>
  <group>MITRE,attack.t1170</group>
