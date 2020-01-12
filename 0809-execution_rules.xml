@@ -165,8 +165,8 @@
  </rule>
 
  <rule id="255926" level="12">
- <if_sid>255925</if_sid>
- <regex>WINWORD.exe</regex>
+ <if_sid>255559</if_sid>
+ <regex>WINWORD.EXE</regex>
  <description>ATT&CK T1064: Word Executing WScript $(win.eventdata.image)</description>
  <group>MITRE,attack.t1064</group>
  </rule>
