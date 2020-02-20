@@ -689,7 +689,7 @@
  <group>MITRE,attack.t1003,sigma</group>
  </rule>
 
- <rule id="255107" level="12">
+ <rule id="255107" level="0">
  <if_group>sysmon_event_10</if_group>
  <field name="win.eventdata.targetImage">\\lsass.exe</field>
  <description>ATT&CK T1003: Detects possible Mimikatz Activity, LSASS access, check parent process</description>
@@ -714,6 +714,30 @@
  <if_group>windows_application</if_group>
  <regex>grabber_temp</regex>
  <description>Microsoft Internet Explorer Passwords dumped, TTP indicative of Trickbot infection</description>
+ <group>MITRE,attack.t1003</group>
+ </rule>
+
+ <rule id="255111" level="12">
+ <if_sid>255531</if_sid>
+ <match>comsvcs.dll</match>
+ <regex>MiniDump|#24</regex>
+ <description>Comsvcs.dll potentially used to dump credentails from LSASS</description>
+ <group>MITRE,attack.t1003</group>
+ </rule>
+
+ <rule id="255112" level="12">
+ <if_sid>255524</if_sid>
+ <match>comsvcs.dll</match>
+ <regex>MiniDump|#24</regex>
+ <description>Comsvcs.dll potentially used to dump credentails from LSASS</description>
+ <group>MITRE,attack.t1003</group>
+ </rule>
+
+ <rule id="255113" level="12">
+ <if_sid>255524</if_sid>
+ <match>comsvcs.dll</match>
+ <regex>MiniDump|#24</regex>
+ <description>Comsvcs.dll potentially used to dump credentails from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
 
@@ -788,6 +812,15 @@
  <if_sid>255000</if_sid>
  <field name="win.eventdata.parentImage">\\WmiPrvSE.exe</field>
  <description>WmiPrvSE event spawning powershell</description>
+ <group>MITRE,attack.t1047</group>
+ </rule>
+
+ <rule id="255209" level="12">
+ <if_group>sysmon_event1</if_group>
+ <field name="win.eventdata.image">\\WmiPrvSE.exe</field>
+ <regex>cmd.exe</regex>
+ <match>127.0.0.1</match>
+ <description>Red Team WMI technique matching Impacket wmiexec.py tooling</description>
  <group>MITRE,attack.t1047</group>
  </rule>
 
@@ -1091,8 +1124,8 @@
  </rule>
 
  <rule id="255926" level="12">
- <if_sid>255925</if_sid>
- <regex>WINWORD.exe</regex>
+ <if_sid>255559</if_sid>
+ <regex>WINWORD.EXE</regex>
  <description>ATT&CK T1064: Word Executing WScript $(win.eventdata.image)</description>
  <group>MITRE,attack.t1064</group>
  </rule>
@@ -1232,5 +1265,6 @@
  <description>T1073 Potential DLL Side Loading by Unsigned Executable: Image loaded by $(win.eventdata.image)</description>
  <group>MITRE,attack.t1073</group>
  </rule>
+
 
 </group>
