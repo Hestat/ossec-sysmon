@@ -71,4 +71,13 @@
  <group>MITRE,attack.t1047</group>
  </rule>
 
+ <rule id="255209" level="12">
+ <if_group>sysmon_event1</if_group>
+ <field name="win.eventdata.image">\\WmiPrvSE.exe</field>
+ <regex>cmd.exe</regex>
+ <match>127.0.0.1</match>
+ <description>Red Team WMI technique matching Impacket wmiexec.py tooling</description>
+ <group>MITRE,attack.t1047</group>
+ </rule>
+
 </group>
