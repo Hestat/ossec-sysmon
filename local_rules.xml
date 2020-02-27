@@ -656,6 +656,12 @@
  <group>MITRE,attack.t1202,</group>
  </rule>
 
+ <rule id="255571" level="5">
+ <if_group>sysmon_event_13</if_group>
+ <match>technique_name=Registry Run</match>
+ <description>MITRE T1060 Run Key Persistence: $(win.eventdata.image)</description>
+ <group>MITRE,attack.t1060,</group>
+ </rule>
  </group>
 
 <group name="credential_access,MITRE,">
