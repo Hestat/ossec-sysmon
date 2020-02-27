@@ -37,7 +37,12 @@
  <group>MITRE,attack.t1180</group>
  </rule>
 
-
+ <rule id="255705" level="12">
+ <if_group>sysmon_event_13</if_group>
+ <regex>Run Keys</regex>
+ <description>ATT&CK T1160: Potential Run Key Persistence Setup</description>
+ <group>MITRE,attack.t1160</group>
+ </rule>
 
 
 
