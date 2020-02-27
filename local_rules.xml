@@ -913,7 +913,7 @@
 
  <rule id="255705" level="12">
  <if_group>sysmon_event_13</if_group>
- <regex>Run Keys</regex>
+ <regex>RunOnce</regex>
  <description>ATT&CK T1160: Potential Run Key Persistence Setup</description>
  <group>MITRE,attack.t1160</group>
  </rule>
@@ -1269,6 +1269,14 @@
  <match>false</match>
  <description>T1073 Potential DLL Side Loading by Unsigned Executable: Image loaded by $(win.eventdata.image)</description>
  <group>MITRE,attack.t1073</group>
+ </rule>
+
+ <rule id="255946" level="12">
+ <if_group>sysmon_event_11</if_group>
+ <match>WINWORD.EXE</match>
+ <field name="data.win.eventdata.targetfilename">\\.exe</field>
+ <description>WORD document wrote executablefile: $(data.win.eventdata.targetfilenam)</description>
+ <group>MITRE,</group>
  </rule>
 
 
