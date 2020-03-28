@@ -856,7 +856,7 @@
  
  <!-- Defender eventid alerting https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus -->
 	<rule id="255302" level="12">
-		<if_sid>100003</if_sid>
+		<if_sid>255531</if_sid>
 		<field name="win.eventdata.commandline">DisableRealtimeMonitoring $true</field>
 		<description>Defender Realtime Monitoring Disabled</description>
 		<group>defender,attack.t1089</group>
