@@ -512,3 +512,10 @@
  <group>MITRE,attack.t1060,</group>
  </rule>
  </group>
+
+ <rule id="255573" level="6">
+ <if_group>sysmon_event3</if_group>
+ <match>technique_name=UnCommonly Used Port</match>
+ <description>MITRE T065 Commonly Used Port: $(win.eventdata.image)</description>
+ <group>MITRE,attack.t1065,</group>
+ </rule>
