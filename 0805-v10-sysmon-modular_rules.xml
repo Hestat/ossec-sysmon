@@ -1,7 +1,7 @@
 
 <group name="sysmon-modular,">
 
-<rule id="255500" level="5">
+ <rule id="255500" level="5">
  <if_group>sysmon_event8</if_group>
  <match>technique_name=Process Injection</match>
  <description>MITRE T1055 Process Injection: $(win.eventdata.image)</description>
@@ -519,3 +519,5 @@
  <description>MITRE T065 Commonly Used Port: $(win.eventdata.image)</description>
  <group>MITRE,attack.t1065,</group>
  </rule>
+
+</group>
