@@ -519,5 +519,4 @@
  <description>MITRE T065 Commonly Used Port: $(win.eventdata.image)</description>
  <group>MITRE,attack.t1065,</group>
  </rule>
-
 </group>
