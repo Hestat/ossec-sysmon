@@ -315,35 +315,38 @@
  <group>MITRE,</group>
  </rule>
 
-<rule id="255947" level="12">
-<if_sid>255531</if_sid>
-<field name="win.eventdata.image">cmstp.exe</field>
-<field name="win.eventdata.commandline">.inf</field>
-<description>CMSTP Executing Remote Scriptlet - T1191</description>
-<group>MITRE,attack.t1089,Execution,sysmon</group>
-</rule>
-<rule id="255948" level="12">
-<if_sid>255531</if_sid>
-<field name="win.eventdata.image">cmstp.exe</field>
-<field name="win.eventdata.commandline">.inf</field>
-<field name="win.eventdata.commandline">/au</field>
-<description>CMSTP Executing UAC Bypass - T1191</description>
-<group>MITRE,attack.t1089,Execution,sysmon</group>
-</rule>
-<rule id="255949" level="12">
-<if_sid>255531</if_sid>
-<field name="win.eventdata.image">hh.exe</field>
-<field name="win.eventdata.commandline">.chm</field>
-<field name="win.eventdata.commandline">http|https</field>
-<description>Compiled HTML Help Remote Payload - T1223</description>
-<group>MITRE,attack.t1223,Execution,sysmon</group>
-</rule>
-<rule id="255950" level="12">
-<if_sid>255531</if_sid>
-<field name="win.eventdata.image">control.exe</field>
-<field name="win.eventdata.commandLine">.cpl</field>
-<description>Compiled HTML Help Local Payload - T1196</description>
-<group>MITRE,attack.t1196,Execution,sysmon</group>
-</rule>
+ <rule id="255947" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">cmstp.exe</field>
+ <field name="win.eventdata.commandline">.inf</field>
+ <description>CMSTP Executing Remote Scriptlet - T1191</description>
+ <group>MITRE,attack.t1089,Execution,sysmon</group>
+ </rule>
+ 
+ <rule id="255948" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">cmstp.exe</field>
+ <field name="win.eventdata.commandline">.inf</field>
+ <field name="win.eventdata.commandline">/au</field>
+ <description>CMSTP Executing UAC Bypass - T1191</description>
+ <group>MITRE,attack.t1089,Execution,sysmon</group>
+ </rule>
+ 
+ <rule id="255949" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">hh.exe</field>
+ <field name="win.eventdata.commandline">.chm</field>
+ <field name="win.eventdata.commandline">http|https</field>
+ <description>Compiled HTML Help Remote Payload - T1223</description>
+ <group>MITRE,attack.t1223,Execution,sysmon</group>
+ </rule>
+ 
+ <rule id="255950" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">control.exe</field>
+ <field name="win.eventdata.commandLine">.cpl</field>
+ <description>Compiled HTML Help Local Payload - T1196</description>
+ <group>MITRE,attack.t1196,Execution,sysmon</group>
+ </rule>
 
 </group>

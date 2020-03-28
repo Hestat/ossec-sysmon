@@ -1037,21 +1037,21 @@
  <group>MITRE,attack.t1406</group>
  </rule>
 
-<rule id="255805" level="12">
-<if_sid>100003</if_sid>
-<field name="win.eventdata.image">sysmon64.exe</field>
-<field name="win.eventdata.commandline">-u</field>
-<description>Sysmon has been uninstalled</description>
-<group>MITRE,attack.t1089</group>
-</rule>
+ <rule id="255805" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">sysmon64.exe</field>
+ <field name="win.eventdata.commandline">-u</field>
+ <description>Sysmon has been uninstalled</description>
+ <group>MITRE,attack.t1089</group>
+ </rule>
 
-<rule id="255806" level="12">
-<if_sid>100003</if_sid>
-<field name="win.eventdata.image">fltmc.exe</field>
-<field name="win.eventdata.commandline">unload</field>
-<description>Unload Filter Driver, possibly sysmon</description>
-<group>MITRE,attack.t1089,sysmon</group>
-</rule>
+ <rule id="255806" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">fltmc.exe</field>
+ <field name="win.eventdata.commandline">unload</field>
+ <description>Unload Filter Driver, possibly sysmon</description>
+ <group>MITRE,attack.t1089,sysmon</group>
+ </rule>
 
 </group>
 <group name="execution,">
@@ -1371,41 +1371,44 @@
  <group>MITRE,</group>
  </rule>
 
-<rule id="255947" level="12">
-<if_sid>255531</if_sid>
-<field name="win.eventdata.image">cmstp.exe</field>
-<field name="win.eventdata.commandline">.inf</field>
-<description>CMSTP Executing Remote Scriptlet - T1191</description>
-<group>MITRE,attack.t1089,Execution,sysmon</group>
-</rule>
-<rule id="255948" level="12">
-<if_sid>255531</if_sid>
-<field name="win.eventdata.image">cmstp.exe</field>
-<field name="win.eventdata.commandline">.inf</field>
-<field name="win.eventdata.commandline">/au</field>
-<description>CMSTP Executing UAC Bypass - T1191</description>
-<group>MITRE,attack.t1089,Execution,sysmon</group>
-</rule>
-<rule id="255949" level="12">
-<if_sid>255531</if_sid>
-<field name="win.eventdata.image">hh.exe</field>
-<field name="win.eventdata.commandline">.chm</field>
-<field name="win.eventdata.commandline">http|https</field>
-<description>Compiled HTML Help Remote Payload - T1223</description>
-<group>MITRE,attack.t1223,Execution,sysmon</group>
-</rule>
-<rule id="255950" level="12">
-<if_sid>255531</if_sid>
-<field name="win.eventdata.image">control.exe</field>
-<field name="win.eventdata.commandLine">.cpl</field>
-<description>Compiled HTML Help Local Payload - T1196</description>
-<group>MITRE,attack.t1196,Execution,sysmon</group>
-</rule>
+ <rule id="255947" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">cmstp.exe</field>
+ <field name="win.eventdata.commandline">.inf</field>
+ <description>CMSTP Executing Remote Scriptlet - T1191</description>
+ <group>MITRE,attack.t1089,Execution,sysmon</group>
+ </rule>
+ 
+ <rule id="255948" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">cmstp.exe</field>
+ <field name="win.eventdata.commandline">.inf</field>
+ <field name="win.eventdata.commandline">/au</field>
+ <description>CMSTP Executing UAC Bypass - T1191</description>
+ <group>MITRE,attack.t1089,Execution,sysmon</group>
+ </rule>
+ 
+ <rule id="255949" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">hh.exe</field>
+ <field name="win.eventdata.commandline">.chm</field>
+ <field name="win.eventdata.commandline">http|https</field>
+ <description>Compiled HTML Help Remote Payload - T1223</description>
+ <group>MITRE,attack.t1223,Execution,sysmon</group>
+ </rule>
+ 
+ <rule id="255950" level="12">
+ <if_sid>255531</if_sid>
+ <field name="win.eventdata.image">control.exe</field>
+ <field name="win.eventdata.commandLine">.cpl</field>
+ <description>Compiled HTML Help Local Payload - T1196</description>
+ <group>MITRE,attack.t1196,Execution,sysmon</group>
+ </rule>
 
 </group>
 
 <group name="logcollect">
-<rule id="256100" level="3">
+ <rule id="256100" level="3">
     <if_sid>60000</if_sid>
     <field name="win.system.channel">^Microsoft-Windows-TerminalServices-LocalSessionManager/Operational$</field>
     <options>no_full_log</options>
@@ -1440,5 +1443,5 @@
     <field name="win.system.channel">^Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational$</field>
     <options>no_full_log</options>
     <description>Group of Windows rules for the System channel</description>
-</rule>
+ </rule>
 </group>
