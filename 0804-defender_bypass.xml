@@ -4,22 +4,85 @@
  <if_group>windows</if_group>
  <regex>Windows Defender Antivirus Real-time Protection scanning for malware and other potentially unwanted software was disabled</regex>
  <description>Windows Defender: Realtime Detection Disabled: https://attack.mitre.org/techniques/T1089/</description>
- <group>gdpr_IV_35.7.d,MITRE,attack.t1089,</group>
+ <group>gdpr_IV_35.7.d,MITRE,attack.t1089,defender</group>
  </rule>
 
  <rule id="255301" level="12">
  <if_group>windows</if_group>
  <id>3002</id>
  <description>Windows Defender: Antivirus Rules Missing: https://attack.mitre.org/techniques/T1089/</description>
- <group>MITRE,attack.t1089</group>
+ <group>MITRE,attack.t1089,defender</group>
  </rule>
-
- <rule id="255302" level="10">
- <if_group>windows</if_group>
- <id>5007</id>
- <regex>C:\\ = 0x0</regex>
- <description>Windows Defender: C:\ Path Excluded, check for malware: https://attack.mitre.org/techniques/T1089/</description>
- <group>gdpr_IV_35.7.d,MITRE,attack.t1089,</group>
- </rule>
-
+ 
+ <!-- Defender eventid alerting https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus -->
+	<rule id="255302" level="12">
+		<if_sid>100003</if_sid>
+		<field name="win.eventdata.commandline">DisableRealtimeMonitoring $true</field>
+		<description>Defender Realtime Monitoring Disabled</description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255303" level="12">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^5001$</field>
+		<description>Windows Defender Real-time Protection was disabled.</description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255304" level="12">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^1006$|^1116$</field>
+		<description>Windows Defender found malware or other potentially unwanted software. </description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255305" level="11">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^1008$</field>
+		<description>Windows Defender found malware and failed to clean it. </description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255306" level="12">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^1015$</field>
+		<description>Windows Defender detected suspicious behavior. </description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255307" level="12">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^5010$</field>
+		<description> Scanning for malware and other potentially unwanted software is disabled.</description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255308" level="12">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^5012$</field>
+		<description> Scanning for viruses is disabled. </description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255309" level="12">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^5007$</field>
+		<field name="win.eventdata.new Value">DisableBlockAtFirstSeen = 0x1</field>
+		<description>Windows Defender Block At First Seen disabled</description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255310" level="10">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^5007$</field>
+		<field name="win.eventdata.new Value">DisableBehaviorMonitoring</field>
+		<description> Windows Defender Behavior Monitoring Was Configured</description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255311" level="10">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^5007$</field>
+		<field name="win.eventdata.new Value">DisableRealtimeMonitoring</field>
+		<description> Windows Defender Realtime Monitoring Was Configured</description>
+		<group>defender,attack.t1089</group>
+	</rule>
+	<rule id="255312" level="10">
+		<if_sid>62100</if_sid>
+		<field name="win.system.eventID">^5007$</field>
+		<field name="win.eventdata.new Value">C:\\ = 0x0|D:\\ = 0x0|E:\\ = 0x0|F:\\ = 0x0</field>
+		<description> Windows Defender Exclusion for Attached Drive</description>
+		<group>defender,attack.t1089</group>
+	</rule>
 </group>

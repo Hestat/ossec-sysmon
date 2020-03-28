@@ -38,4 +38,20 @@
  <group>MITRE,attack.t1406</group>
  </rule>
 
+<rule id="255805" level="12">
+<if_sid>100003</if_sid>
+<field name="win.eventdata.image">sysmon64.exe</field>
+<field name="win.eventdata.commandline">-u</field>
+<description>Sysmon has been uninstalled</description>
+<group>MITRE,attack.t1089</group>
+</rule>
+
+<rule id="255806" level="12">
+<if_sid>100003</if_sid>
+<field name="win.eventdata.image">fltmc.exe</field>
+<field name="win.eventdata.commandline">unload</field>
+<description>Unload Filter Driver, possibly sysmon</description>
+<group>MITRE,attack.t1089,sysmon</group>
+</rule>
+
 </group>

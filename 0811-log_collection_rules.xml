@@ -1,0 +1,39 @@
+
+<group name="logcollect">
+<rule id="256100" level="3">
+    <if_sid>60000</if_sid>
+    <field name="win.system.channel">^Microsoft-Windows-TerminalServices-LocalSessionManager/Operational$</field>
+    <options>no_full_log</options>
+    <description>Group of Windows rules for the System channel</description>
+  </rule>
+  <rule id="256101" level="3">
+    <if_sid>60000</if_sid>
+    <field name="win.system.channel">^Microsoft-Windows-SMBServer/Operational$</field>
+    <options>no_full_log</options>
+    <description>Group of Windows rules for the System channel</description>
+  </rule>
+  <rule id="256102" level="3">
+    <if_sid>60000</if_sid>
+    <field name="win.system.channel">^Microsoft-Windows-SMBServer/Connectivity$</field>
+    <options>no_full_log</options>
+    <description>Group of Windows rules for the System channel</description>
+  </rule>
+  <rule id="256103" level="3">
+    <if_sid>60000</if_sid>
+    <field name="win.system.channel">^Microsoft-Windows-SMBClient/Operational$</field>
+    <options>no_full_log</options>
+    <description>Group of Windows rules for the System channel</description>
+  </rule>
+  <rule id="256104" level="3">
+    <if_sid>60000</if_sid>
+    <field name="win.system.channel">^Microsoft-Windows-SmbClient/Connectivity$</field>
+    <options>no_full_log</options>
+    <description>Group of Windows rules for the System channel</description>
+  </rule>
+  <rule id="256105" level="3">
+    <if_sid>60000</if_sid>
+    <field name="win.system.channel">^Microsoft-Windows-TerminalServices-RemoteConnectionManager/Operational$</field>
+    <options>no_full_log</options>
+    <description>Group of Windows rules for the System channel</description>
+</rule>
+</group>
