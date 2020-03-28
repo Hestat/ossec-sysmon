@@ -662,7 +662,6 @@
  <description>MITRE T1060 Run Key Persistence: $(win.eventdata.image)</description>
  <group>MITRE,attack.t1060,</group>
  </rule>
- </group>
 
  <rule id="255573" level="6">
  <if_group>sysmon_event3</if_group>
