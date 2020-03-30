@@ -1001,7 +1001,7 @@
  <group>MITRE,attack.t1160</group>
  </rule>
 
- <rule id="255706" level="0">
+ <rule id="255707" level="0">
  <if_sid>255702</if_sid>
  <regex>Explorer.EXE</regex>
  <description>Startup Folder Whitelist</description>
