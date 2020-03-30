@@ -994,6 +994,19 @@
  <group>MITRE,attack.t1160</group>
  </rule>
 
+ <rule id="255706" level="0">
+ <if_sid>255705</if_sid>
+ <field name="win.eventdata.image">\\OneDriveSetup.exe</field>
+ <description>silence normal onedrive activity</description>
+ <group>MITRE,attack.t1160</group>
+ </rule>
+
+ <rule id="255706" level="0">
+ <if_sid>255702</if_sid>
+ <regex>Explorer.EXE</regex>
+ <description>Startup Folder Whitelist</description>
+ <group>MITRE,attack.t1060</group>
+ </rule>
 
 
 </group>
