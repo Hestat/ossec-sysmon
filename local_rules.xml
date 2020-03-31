@@ -1008,6 +1008,12 @@
  <group>MITRE,attack.t1060</group>
  </rule>
 
+ <rule id="255708" level="12">
+ <if_sid>255539</if_sid>
+ <regex>Windows\\CurrentVersion\\Run</regex>
+ <description>Run Key Persistence Detected</description>
+ <group>MITRE,attack.t1112</group>
+ </rule>
 
 </group>
 
