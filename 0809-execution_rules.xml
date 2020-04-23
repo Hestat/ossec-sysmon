@@ -349,4 +349,11 @@
  <group>MITRE,attack.t1196,Execution,sysmon</group>
  </rule>
 
+ <rule id="255951" level="12">
+ <if_sid>255561</if_sid>
+ <match>appdata</match>
+ <field name="win.eventdata.commandLine">.txt</field>
+ <description>Ursnif DLL loading via Regsrv32 T1218</description>
+ <group>MITRE,attack.t1218,Execution,sysmon</group>
+ </rule>
 </group>
