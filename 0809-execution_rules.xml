@@ -356,4 +356,14 @@
  <description>Ursnif DLL loading via Regsrv32 T1218</description>
  <group>MITRE,attack.t1218,Execution,sysmon</group>
  </rule>
+
+ <rule id="255952" level="12">
+ <if_sid>255551</if_sid>
+ <match>regread</match>
+ <regex>WScript.Shell</regex>
+ <description>Ursnif loading from Registry via MSHTA exec, T1170</description>
+ <group>MITRE,attack.t1170,Execution,sysmon</group>
+ </rule>
+
+
 </group>
