@@ -5,7 +5,7 @@
   <ArchiveDirectory>Java</ArchiveDirectory>
   <EventFiltering>
     <FileDelete onmatch="include">
-	    <TargetFilename condition="contains any">.exe;.ps1;.bat;.js;.jse;.xls;.xlsm;.jar;.zip</TargetFilename>
+	    <TargetFilename condition="contains any">.exe;.ps1;.bat;.js;.jse;.xls;.xlsm;.jar;.zip;.vbs</TargetFilename>
     </FileDelete>
     <RuleGroup name="" groupRelation="or">
       <!-- Event ID 1 == Process Creation. -->
