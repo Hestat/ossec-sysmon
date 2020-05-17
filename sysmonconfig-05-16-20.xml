@@ -1,11 +1,14 @@
 <Sysmon schemaversion="4.3">
   <!-- Capture all hashes -->
-  <HashAlgorithms>*</HashAlgorithms>
+  <HashAlgorithms>sha256</HashAlgorithms>
   <CheckRevocation />
   <ArchiveDirectory>Java</ArchiveDirectory>
   <EventFiltering>
     <FileDelete onmatch="include">
 	    <TargetFilename condition="contains any">.exe;.ps1;.bat;.js;.jse;.xls;.xlsm;.jar;.zip;.vbs</TargetFilename>
+    </FileDelete>
+    <FileDelete onmatch="exclude">
+            <TargetFilename condition="contains any">C:\Program Files\WindowsApps\Deleted\;PSScriptPolicyTest;Prefetch;.json</TargetFilename>
     </FileDelete>
     <RuleGroup name="" groupRelation="or">
       <!-- Event ID 1 == Process Creation. -->
