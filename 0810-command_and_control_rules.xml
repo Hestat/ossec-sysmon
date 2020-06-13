@@ -19,7 +19,7 @@
   <if_group>sysmon_event3</if_group>
   <field name="win.eventdata.image">C:\\Windows\\System32\\svchost.exe</field>
   <field name="win.eventdata.destinationPort">449</field>
-  <description>Wergmr connection on port 449 suspected Trickbot injected process C2 activity</description>
+  <description>Svchost connection on port 449 suspected Trickbot injected process C2 activity</description>
   <group>trickbot,</group>
 </rule>
 
