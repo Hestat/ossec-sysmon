@@ -15,7 +15,7 @@
   <group>trickbot,</group>
 </rule>
 
-<rule id="256001" level="10">
+<rule id="256002" level="10">
   <if_group>sysmon_event3</if_group>
   <field name="win.eventdata.image">C:\\Windows\\System32\\svchost.exe</field>
   <field name="win.eventdata.destinationPort">449</field>
