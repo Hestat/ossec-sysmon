@@ -365,5 +365,11 @@
  <group>MITRE,attack.t1170,Execution,sysmon</group>
  </rule>
 
+ <rule id="255953" level="12">
+ <if_sid>255531</if_sid>
+ <match>SQB</match>
+ <description>Encoded Powershell IEX, T1086</description>
+ <group>MITRE,attack.t1086,Execution,sysmon</group>
+ </rule>
 
 </group>

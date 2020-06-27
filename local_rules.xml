@@ -666,9 +666,17 @@
  <rule id="255573" level="6">
  <if_group>sysmon_event3</if_group>
  <match>technique_name=UnCommonly Used Port</match>
- <description>MITRE T065 Commonly Used Port: $(win.eventdata.image)</description>
+ <description>MITRE T1065 Commonly Used Port: $(win.eventdata.image)</description>
  <group>MITRE,attack.t1065,</group>
  </rule>
+
+ <rule id="255574" level="6">
+ <if_group>sysmon_event7</if_group>
+ <match>technique_name=User Execution</match>
+ <description>MITRE T1204 User Execution: $(win.eventdata.image)</description>
+ <group>MITRE,attack.t204,</group>
+ </rule>
+
 </group>
 
 <group name="credential_access,MITRE,">
@@ -945,6 +953,12 @@
  <group>MITRE,attack.t1055,</group>
  </rule>
 
+ <rule id="255953" level="12">
+ <if_sid>255531</if_sid>
+ <match>SQB</match>
+ <description>Encoded Powershell IEX, T1086</description>
+ <group>MITRE,attack.t1086,Execution,sysmon</group>
+ </rule>
 
 </group>
 
@@ -1439,6 +1453,39 @@
  <description>Ursnif loading from Registry via MSHTA exec, T1170</description>
  <group>MITRE,attack.t1170,Execution,sysmon</group>
  </rule>
+
+ <rule id="255953" level="12">
+ <if_sid>255531</if_sid>
+ <match>SQB</match>
+ <description>Encoded Powershell IEX, T1086</description>
+ <group>MITRE,attack.t1086,Execution,sysmon</group>
+ </rule>
+
+</group>
+<group name="command and control">
+
+<rule id="256000" level="0">
+  <if_group>sysmon_event3</if_group>
+  <list field="win.eventdata.destinationIp" lookup="address_match_key">etc/lists/emotet-list</list>
+  <description>IP connection to Emotet Command and Control</description>
+  <group>emotet,</group>
+</rule>
+
+<rule id="256001" level="10">
+  <if_group>sysmon_event3</if_group>
+  <field name="win.eventdata.image">C:\\Windows\\System32\\wermgr.exe</field>
+  <field name="win.eventdata.destinationPort">449</field>
+  <description>Wergmr connection on port 449 suspected Trickbot injected process C2 activity</description>
+  <group>trickbot,</group>
+</rule>
+
+<rule id="256002" level="10">
+  <if_group>sysmon_event3</if_group>
+  <field name="win.eventdata.image">C:\\Windows\\System32\\svchost.exe</field>
+  <field name="win.eventdata.destinationPort">449</field>
+  <description>Svchost connection on port 449 suspected Trickbot injected process C2 activity</description>
+  <group>trickbot,</group>
+</rule>
 
 
 </group>
