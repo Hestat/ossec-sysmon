@@ -762,6 +762,21 @@
  <group>MITRE,attack.t1003</group>
  </rule>
 
+ <rule id="255114" level="12">
+ <if_group>sysmon_event1</if_group>
+ <match>mimikatz</match>
+ <description>Mimikatz potentially used to dump credentails from LSASS</description>
+ <group>MITRE,attack.t1003</group>
+ </rule>
+
+ <rule id="255115" level="12">
+ <if_group>sysmon_event1</if_group>
+ <match>procdump</match>
+ <regex>lsass</regex>
+ <description>Procdump potentially used to dump credentails from LSASS</description>
+ <group>MITRE,attack.t1003</group>
+ </rule>
+
 </group>
 
 <group name="WMI,">
@@ -1459,6 +1474,13 @@
  <match>SQB</match>
  <description>Encoded Powershell IEX, T1086</description>
  <group>MITRE,attack.t1086,Execution,sysmon</group>
+ </rule>
+
+ <rule id="255954" level="12">
+ <if_group>sysmon_event3</if_group>
+ <match>psexec</match>
+ <description>potential lateral movement using psexec</description>
+ <group>MITRE,attack.t1570,sysmon</group>
  </rule>
 
 </group>
