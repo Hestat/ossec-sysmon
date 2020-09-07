@@ -372,4 +372,11 @@
  <group>MITRE,attack.t1086,Execution,sysmon</group>
  </rule>
 
+ <rule id="255954" level="12">
+ <if_group>sysmon_event3</if_group>
+ <match>psexec</match>
+ <description>potential lateral movement using psexec</description>
+ <group>MITRE,attack.t1570,sysmon</group>
+ </rule>
+
 </group>
