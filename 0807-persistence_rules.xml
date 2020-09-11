@@ -40,8 +40,8 @@
  <rule id="255705" level="12">
  <if_group>sysmon_event_13</if_group>
  <regex>RunOnce</regex>
- <description>ATT&CK T1160: Potential Run Key Persistence Setup</description>
- <group>MITRE,attack.t1160</group>
+ <description>ATT&CK T1547.001: Potential Run Key Persistence Setup</description>
+ <group>MITRE,attack.t1547.001</group>
  </rule>
 
  <rule id="255706" level="0">
@@ -62,7 +62,22 @@
  <if_sid>255539</if_sid>
  <regex>Windows\\CurrentVersion\\Run</regex>
  <description>Run Key Persistence Detected</description>
- <group>MITRE,attack.t1112</group>
+ <group>MITRE,attack.t1547.001</group>
  </rule>
+
+ <rule id="255709" level="12">
+ <if_group>sysmon_event_12</if_group>
+ <regex>powershell</regex>
+ <description>Powershell in registry, potential malicious persistence</description>
+ <group>MITRE,attack.t1547.001</group>
+ </rule>
+
+ <rule id="255710" level="12">
+ <if_group>sysmon_event_12</if_group>
+ <regex>RunOnce</regex>
+ <description>ATT&CK T1547.001: Potential Run Key Persistence Setup</description>
+ <group>MITRE,attack.t1547.001</group>
+ </rule>
+
 
 </group>
