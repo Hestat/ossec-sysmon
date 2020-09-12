@@ -714,7 +714,7 @@
  <if_group>sysmon_event_10</if_group>
  <match>lsass.exe</match>
  <regex>dbgcore</regex>
- <description>dbgcore.DLL potentially used to dump credentails from LSASS</description>
+ <description>ATT&CK T1003: dbgcore.DLL potentially used to dump credentails from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
 
@@ -1578,7 +1578,7 @@
 
  <rule id="256200" level="5">
  <if_group>sysmon_event_11</if_group>
- <field name="win.eventdata.processId">4</field>
+ <field name="win.eventdata.processId">^4$</field>
  <description>ATT&CK T1570: Executable transfered potentially by Psexec tool, potential lateral movement</description>
  <group>MITRE,attack.t1570</group>
  </rule>
