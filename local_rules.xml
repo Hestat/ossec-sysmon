@@ -1597,6 +1597,12 @@
  <group>MITRE,attack.t1543.001</group>
  </rule>
 
+ <rule id="256203" level="12">
+ <if_sid>60106</if_sid>
+ <field name="win.eventdata.logonType">10|12</field>
+ <description>ATT&CK T1021/T1133: Successful RDP Logon from $(win.eventdata.ipAddress)</description>
+ <group>MITRE,attack.t1021,attack.t1133</group>
+ </rule>
 
 
 </group>
