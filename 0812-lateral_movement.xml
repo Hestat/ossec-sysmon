@@ -9,7 +9,7 @@
 
  <rule id="256201" level="12">
  <if_sid>256200</if_sid>
- <field name="win.eventdata.targetFilename">\\.exe</field>
+ <regex>.exe</regex>
  <description>ATT&CK T1570: Executable transfered potentially by Psexec tool, potential lateral movement</description>
  <group>MITRE,attack.t1570</group>
  </rule>
