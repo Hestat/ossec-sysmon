@@ -1045,9 +1045,9 @@
  </rule>
 
  <rule id="255709" level="12">
- <if_group>sysmon_event_13</if_group>
+ <if_sid>255572</if_sid>
  <regex>powershell</regex>
- <description>Powershell in registry, potential malicious persistence</description>
+ <description>ATT&CK T1547.001: Powershell in registry, potential malicious persistence</description>
  <group>MITRE,attack.t1547.001</group>
  </rule>
 
