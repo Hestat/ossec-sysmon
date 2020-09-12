@@ -779,8 +779,8 @@
 
  <rule id="255116" level="12">
  <if_group>sysmon_event_10</if_group>
- <match>dbgcore.DLL</match>
- <regex>lsass</regex>
+ <match>lsass.exe</match>
+ <regex>dbgcore</regex>
  <description>dbgcore.DLL potentially used to dump credentails from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
