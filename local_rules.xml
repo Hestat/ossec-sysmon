@@ -1565,3 +1565,24 @@
     <description>Group of Windows rules for the System channel</description>
  </rule>
 </group>
+<group name="lateral movement,">
+
+ <rule id="256200" level="12">
+ <if_group>sysmon_event_11</if_group>
+ <field name="win.eventdata.processId">4</field>
+ <field name="win.eventdata.targetFilename">\\.exe</field>
+ <description>ATT&CK T1570: Executable transfered potentially by Psexec tool, potential lateral movement</description>
+ <group>MITRE,attack.t1570</group>
+ </rule>
+
+ <rule id="256201" level="12">
+ <if_sid>255700</if_sid>
+ <regex>%COMSPEC%</regex>
+ <description>ATT&CK T1543.003: %COMSPEC% Variable in Registry Service, potentail lateral movement or persistence mechanism</description>
+ <group>MITRE,attack.t1543.001</group>
+ </rule>
+
+
+
+<group>
+

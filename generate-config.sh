@@ -17,6 +17,7 @@ R808=$(pwd)/0808-defense_evasion_rules.xml
 R809=$(pwd)/0809-execution_rules.xml
 R810=$(pwd)/0810-command_and_control_rules.xml
 R811=$(pwd)/0811-log_collection_rules.xml
+R812=$(pwd)/0812-lateral_movement.xml
 RULESFILE=$(pwd)/local_rules.xml
 rm $RULESFILE
 
@@ -35,6 +36,7 @@ echo -e "Adding: \n$R808\n"; cat $R808 >> $RULESFILE
 echo -e "Adding: \n$R809\n"; cat $R809 >> $RULESFILE
 echo -e "Adding: \n$R811\n"; cat $R810 >> $RULESFILE
 echo -e "Adding: \n$R811\n"; cat $R811 >> $RULESFILE
+echo -e "Adding: \n$R812\n"; cat $R812 >> $RULESFILE
 
 echo -e "You can find your configuration file here:"
 echo -e "$RULESFILE"
