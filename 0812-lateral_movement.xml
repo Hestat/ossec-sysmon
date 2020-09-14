@@ -28,6 +28,14 @@
  <group>MITRE,attack.t1021,attack.t1133</group>
  </rule>
 
+ <rule id="256204" level="12">
+ <if_group>sysmon_event_11</if_group>
+ <match>Network Shortcuts</match>
+ <regex>c\$</regex>
+ <description>ATT&CK T1021.002: Remote System C$ drive mounted</description>
+ <group>MITRE,attack.t1021.002</group>
+ </rule>
+
 
 </group>
 
