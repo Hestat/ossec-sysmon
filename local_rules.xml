@@ -1510,7 +1510,7 @@
  <rule id="255955" level="12">
  <if_sid>255524</if_sid>
  <match>127.0.0.1\\</match>
- <regex>ADMIN\$</regex>
+ <regex>ADMIN\$|C\$|IPC\$</regex>
  <description>ATT&CK T1021.002: Execute command writing output to local Admin Share</description>
  <group>MITRE,attack.t1021.002,sysmon</group>
  </rule>
