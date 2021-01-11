@@ -1620,6 +1620,14 @@
  <group>MITRE,attack.t1021.002</group>
  </rule>
 
+ <rule id="256205" level="3">
+ <if_sid>60106</if_sid>
+ <field name="win.eventdata.logonType">9</field>
+ <match>seclogo</match> 
+ <description>ATT&CK T1550.002: Potential Pass the Hash Attack</description>
+ <group>MITRE,attack.t1550.002</group>
+ </rule>
+
 
 </group>
 
