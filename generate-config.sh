@@ -7,6 +7,7 @@
 
 R331=$(pwd)/0331-sysmon_rules.xml
 R332=$(pwd)/0332-credential_access_rules.xml
+R802=$(pwd)/0802-sysmon-supplement.xml
 R803=$(pwd)/0803-wmic_malicious_rules.xml
 R804=$(pwd)/0804-defender_bypass.xml
 R805=$(pwd)/0805-sysmon-modular_rules.xml
@@ -28,6 +29,7 @@ touch $RULESFILE
 echo -e "Adding: \n$R331\n"; cat $R331 >> $RULESFILE
 echo -e "Adding: \n$R805v10\n"; cat $R805v10 >> $RULESFILE
 echo -e "Adding: \n$R332\n"; cat $R332 >> $RULESFILE
+echo -e "Adding: \n$R802\n"; cat $R802 >> $RULESFILE
 echo -e "Adding: \n$R803\n"; cat $R803 >> $RULESFILE
 echo -e "Adding: \n$R804\n"; cat $R804 >> $RULESFILE
 echo -e "Adding: \n$R806\n"; cat $R806 >> $RULESFILE
