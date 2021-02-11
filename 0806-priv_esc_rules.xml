@@ -24,5 +24,14 @@
  <group>MITRE,attack.t1134,sysmon</group>
  </rule>
 
+ <rule id="255603" level="12">
+ <if_group>sysmon_event8</if_group>
+ <match>rundll32.exe</match>
+ <regex>winlogon.exe|dllhost.exe|svchost.exe</regex>
+ <description>ATT&CK T1055: Process injections by $(win.eventdata.sourceImage) into $(win.eventdata.targetImage)</description>
+ <group>MITRE,attack.t1055,sysmon</group>
+ </rule>
+
+
 </group>
 
