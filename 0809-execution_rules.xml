@@ -289,7 +289,7 @@
  <if_group>sysmon_event1</if_group>
  <match>net.webclient</match>
  <regex>downloadstring|downloadfile</regex>
- <description>Potential powershell download anomaly investigate for potentail malware</description>
+ <description>Potential powershell download anomaly investigate for potential malware</description>
  <group>MITRE,attack.t1086</group>
  </rule>
 
