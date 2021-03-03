@@ -54,14 +54,14 @@
  <rule id="255910" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|cablesongs|mscmsknown</regex>
- <description>Potential Emotet Execuatble running detection</description>
+ <description>Potential Emotet Executable running detection</description>
  <group>MITRE,execution</group>
  </rule>
 
  <rule id="255911" level="12">
  <if_group>sysmon_event3</if_group>
  <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|vertclient|cablesongs|mscmsknown</regex>
- <description>Potential Emotet Execuatble running detection</description>
+ <description>Potential Emotet Executable running detection</description>
  <group>MITRE,execution</group>
  </rule>
 
@@ -69,7 +69,7 @@
  <if_group>sysmon_event1</if_group>
  <field name="win.eventdata.currentDirectory">AppData\\Roaming</field>
  <regex>ipconfig|workstation|domain_trusts</regex>
- <description>Potential Trickbot Execuatble running local and domain reconasiance</description>
+ <description>Potential Trickbot Executable running local and domain reconnaissance</description>
  <group>MITRE,execution</group>
  </rule>
 
