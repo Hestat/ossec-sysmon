@@ -311,7 +311,7 @@
  <if_group>sysmon_event_11</if_group>
  <match>WINWORD.EXE</match>
  <field name="data.win.eventdata.targetfilename">\\.exe</field>
- <description>WORD document wrote executablefile: $(data.win.eventdata.targetfilenam)</description>
+ <description>WORD document wrote executable file: $(data.win.eventdata.targetfilenam)</description>
  <group>MITRE,</group>
  </rule>
 
