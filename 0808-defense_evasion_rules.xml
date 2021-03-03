@@ -34,7 +34,7 @@
  <rule id="255804" level="10">
  <if_group>sysmon_event_11</if_group>
  <field name="win.eventdata.targetFilename">\\.arj</field>
- <description>ATT&CK T1406: Filetype anonmaly, unusual file type .arj</description>
+ <description>ATT&CK T1406: Filetype anomaly, unusual file type .arj</description>
  <group>MITRE,attack.t1406</group>
  </rule>
 
