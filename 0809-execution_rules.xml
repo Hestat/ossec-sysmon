@@ -189,42 +189,42 @@
  <rule id="255929" level="12">
  <if_sid>255524</if_sid>
  <regex>WINWORD.EXE</regex>
- <description>Command Line process spawned from Mircosoft Word Doc</description>
+ <description>Command Line process spawned from Microsoft Word Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255930" level="12">
  <if_sid>255524</if_sid>
  <regex>EXCEL.EXE</regex>
- <description>Command Line process spawned from Mircosoft Excel Doc</description>
+ <description>Command Line process spawned from Microsoft Excel Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255931" level="12">
  <if_sid>255524</if_sid>
  <regex>POWERPNT.exe</regex>
- <description>Command Line process spawned from Mircosoft Powerpoint Doc</description>
+ <description>Command Line process spawned from Microsoft Powerpoint Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255932" level="12">
  <if_sid>255524</if_sid>
  <regex>OUTLOOK.EXE</regex>
- <description>Command Line process spawned from Mircosoft Outlook</description>
+ <description>Command Line process spawned from Microsoft Outlook</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255933" level="12">
  <if_sid>255524</if_sid>
  <regex>VISIO.exe</regex>
- <description>Command Line process spawned from Mircosoft Visio Doc</description>
+ <description>Command Line process spawned from Microsoft Visio Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255934" level="12">
  <if_sid>255524</if_sid>
  <regex>MSPUB.exe</regex>
- <description>Command Line process spawned from Mircosoft Publisher Doc</description>
+ <description>Command Line process spawned from Microsoft Publisher Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
