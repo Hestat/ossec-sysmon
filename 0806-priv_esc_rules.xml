@@ -20,7 +20,7 @@
  <rule id="255602" level="12">
  <if_sid>255524</if_sid>
  <match>\\\\.\\pipe\\</match>
- <description>Named Pipe potential Privelege Escalation (Meterpreter) T1134</description>
+ <description>Named Pipe potential Privilege Escalation (Meterpreter) T1134</description>
  <group>MITRE,attack.t1134,sysmon</group>
  </rule>
 
