@@ -387,4 +387,11 @@
  <group>MITRE,attack.t1021.002,sysmon</group>
  </rule>
 
+ <rule id="255956" level="12">
+ <if_group>sysmon_event1</if_group>
+ <match>w3wp.exe</match>
+ <regex>cmd.exe</regex>
+ <description>ATT&CK T1505.003: Potential webshell interaction</description>
+ <group>MITRE,attack.t1505.003,sysmon</group>
+ </rule>
 </group>

@@ -79,5 +79,12 @@
  <group>MITRE,attack.t1547.001</group>
  </rule>
 
+ <rule id="255711" level="12">
+ <if_group>sysmon_event_11</if_group>
+ <match>w3wp.exe</match>
+ <regex>asp|php|jsp</regex>
+ <description>ATT&CK T1505.003: Potential Webshell from IIS</description>
+ <group>MITRE,attack.t1505.003</group>
+ </rule>
 
 </group>
