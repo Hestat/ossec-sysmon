@@ -17,7 +17,7 @@
  <rule id="256202" level="12">
  <if_sid>255700</if_sid>
  <regex>%COMSPEC%</regex>
- <description>ATT&CK T1543.003: %COMSPEC% Variable in Registry Service, potentail lateral movement or persistence mechanism</description>
+ <description>ATT&CK T1543.003: %COMSPEC% Variable in Registry Service, potential lateral movement or persistence mechanism</description>
  <group>MITRE,attack.t1543.001</group>
  </rule>
 
