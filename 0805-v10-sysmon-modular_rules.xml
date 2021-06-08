@@ -372,7 +372,7 @@
  <group>MITRE,attack.t1182,</group>
  </rule>
 
- <rule id="255553" level="12">
+ <rule id="255553" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>technique_name=Image File Execution Options Injection</match>
  <description>MITRE T1183 Image File Execution Options Injection: $(win.eventdata.image)</description>

@@ -504,8 +504,8 @@
 
  <rule id="255550" level="5">
  <if_group>sysmon_event1</if_group>
- <match>technique_name=Hidden Files and DirectoriesHidden Files and Directories</match>
- <description>MITRE T1158 Hidden Files and DirectoriesHidden Files and Directories: $(win.eventdata.image)</description>
+ <match>technique_name=Hidden Files and  Files Directories</match>
+ <description>MITRE T1158 Hidden Files and Directories: $(win.eventdata.image)</description>
  <group>MITRE,attack.t1158,</group>
  </rule>
 
@@ -523,7 +523,7 @@
  <group>MITRE,attack.t1182,</group>
  </rule>
 
- <rule id="255553" level="12">
+ <rule id="255553" level="5">
  <if_group>sysmon_event_12</if_group>
  <match>technique_name=Image File Execution Options Injection</match>
  <description>MITRE T1183 Image File Execution Options Injection: $(win.eventdata.image)</description>
@@ -714,7 +714,7 @@
  <if_group>sysmon_event_10</if_group>
  <match>lsass.exe</match>
  <regex>dbgcore</regex>
- <description>ATT&CK T1003: dbgcore.DLL potentially used to dump credentails from LSASS</description>
+ <description>ATT&CK T1003: dbgcore.DLL potentially used to dump credentials from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
 
@@ -743,7 +743,7 @@
  <if_sid>255531</if_sid>
  <match>comsvcs.dll</match>
  <regex>MiniDump|#24</regex>
- <description>Comsvcs.dll potentially used to dump credentails from LSASS</description>
+ <description>Comsvcs.dll potentially used to dump credentials from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
 
@@ -751,7 +751,7 @@
  <if_sid>255524</if_sid>
  <match>comsvcs.dll</match>
  <regex>MiniDump|#24</regex>
- <description>Comsvcs.dll potentially used to dump credentails from LSASS</description>
+ <description>Comsvcs.dll potentially used to dump credentials from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
 
@@ -759,14 +759,14 @@
  <if_sid>255524</if_sid>
  <match>comsvcs.dll</match>
  <regex>MiniDump|#24</regex>
- <description>Comsvcs.dll potentially used to dump credentails from LSASS</description>
+ <description>Comsvcs.dll potentially used to dump credentials from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
 
  <rule id="255114" level="12">
  <if_group>sysmon_event1</if_group>
  <match>mimikatz</match>
- <description>Mimikatz potentially used to dump credentails from LSASS</description>
+ <description>Mimikatz potentially used to dump credentials from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
 
@@ -774,7 +774,7 @@
  <if_group>sysmon_event1</if_group>
  <match>procdump</match>
  <regex>lsass</regex>
- <description>Procdump potentially used to dump credentails from LSASS</description>
+ <description>Procdump potentially used to dump credentials from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
 
@@ -782,7 +782,7 @@
  <if_group>sysmon_event_10</if_group>
  <match>lsass.exe</match>
  <regex>dbgcore</regex>
- <description>dbgcore.DLL potentially used to dump credentails from LSASS</description>
+ <description>dbgcore.DLL potentially used to dump credentials from LSASS</description>
  <group>MITRE,attack.t1003</group>
  </rule>
 
@@ -1053,7 +1053,7 @@
  <rule id="255602" level="12">
  <if_sid>255524</if_sid>
  <match>\\\\.\\pipe\\</match>
- <description>Named Pipe potential Privelege Escalation (Meterpreter) T1134</description>
+ <description>Named Pipe potential Privilege Escalation (Meterpreter) T1134</description>
  <group>MITRE,attack.t1134,sysmon</group>
  </rule>
 
@@ -1149,6 +1149,13 @@
  <group>MITRE,attack.t1547.001</group>
  </rule>
 
+ <rule id="255711" level="12">
+ <if_group>sysmon_event_11</if_group>
+ <match>w3wp.exe</match>
+ <regex>asp|php|jsp</regex>
+ <description>ATT&CK T1505.003: Potential Webshell from IIS</description>
+ <group>MITRE,attack.t1505.003</group>
+ </rule>
 
 </group>
 
@@ -1187,7 +1194,7 @@
  <rule id="255804" level="10">
  <if_group>sysmon_event_11</if_group>
  <field name="win.eventdata.targetFilename">\\.arj</field>
- <description>ATT&CK T1406: Filetype anonmaly, unusual file type .arj</description>
+ <description>ATT&CK T1406: Filetype anomaly, unusual file type .arj</description>
  <group>MITRE,attack.t1406</group>
  </rule>
 
@@ -1264,14 +1271,14 @@
  <rule id="255910" level="12">
  <if_group>sysmon_event1</if_group>
  <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|cablesongs|mscmsknown</regex>
- <description>Potential Emotet Execuatble running detection</description>
+ <description>Potential Emotet Executable running detection</description>
  <group>MITRE,execution</group>
  </rule>
 
  <rule id="255911" level="12">
  <if_group>sysmon_event3</if_group>
  <regex>englishsize|adamteapot|initijpn|classchx|choreengine|pixelproc|vertclient|cablesongs|mscmsknown</regex>
- <description>Potential Emotet Execuatble running detection</description>
+ <description>Potential Emotet Executable running detection</description>
  <group>MITRE,execution</group>
  </rule>
 
@@ -1279,7 +1286,7 @@
  <if_group>sysmon_event1</if_group>
  <field name="win.eventdata.currentDirectory">AppData\\Roaming</field>
  <regex>ipconfig|workstation|domain_trusts</regex>
- <description>Potential Trickbot Execuatble running local and domain reconasiance</description>
+ <description>Potential Trickbot Executable running local and domain reconnaissance</description>
  <group>MITRE,execution</group>
  </rule>
 
@@ -1399,42 +1406,42 @@
  <rule id="255929" level="12">
  <if_sid>255524</if_sid>
  <regex>WINWORD.EXE</regex>
- <description>Command Line process spawned from Mircosoft Word Doc</description>
+ <description>Command Line process spawned from Microsoft Word Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255930" level="12">
  <if_sid>255524</if_sid>
  <regex>EXCEL.EXE</regex>
- <description>Command Line process spawned from Mircosoft Excel Doc</description>
+ <description>Command Line process spawned from Microsoft Excel Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255931" level="12">
  <if_sid>255524</if_sid>
  <regex>POWERPNT.exe</regex>
- <description>Command Line process spawned from Mircosoft Powerpoint Doc</description>
+ <description>Command Line process spawned from Microsoft Powerpoint Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255932" level="12">
  <if_sid>255524</if_sid>
  <regex>OUTLOOK.EXE</regex>
- <description>Command Line process spawned from Mircosoft Outlook</description>
+ <description>Command Line process spawned from Microsoft Outlook</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255933" level="12">
  <if_sid>255524</if_sid>
  <regex>VISIO.exe</regex>
- <description>Command Line process spawned from Mircosoft Visio Doc</description>
+ <description>Command Line process spawned from Microsoft Visio Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
  <rule id="255934" level="12">
  <if_sid>255524</if_sid>
  <regex>MSPUB.exe</regex>
- <description>Command Line process spawned from Mircosoft Publisher Doc</description>
+ <description>Command Line process spawned from Microsoft Publisher Doc</description>
  <group>MITRE,attack.t1059,attack.t1202,</group>
  </rule>
 
@@ -1499,7 +1506,7 @@
  <if_group>sysmon_event1</if_group>
  <match>net.webclient</match>
  <regex>downloadstring|downloadfile</regex>
- <description>Potential powershell download anomaly investigate for potentail malware</description>
+ <description>Potential powershell download anomaly investigate for potential malware</description>
  <group>MITRE,attack.t1086</group>
  </rule>
 
@@ -1521,7 +1528,7 @@
  <if_group>sysmon_event_11</if_group>
  <match>WINWORD.EXE</match>
  <field name="data.win.eventdata.targetfilename">\\.exe</field>
- <description>WORD document wrote executablefile: $(data.win.eventdata.targetfilenam)</description>
+ <description>WORD document wrote executable file: $(data.win.eventdata.targetfilenam)</description>
  <group>MITRE,</group>
  </rule>
 
@@ -1597,6 +1604,13 @@
  <group>MITRE,attack.t1021.002,sysmon</group>
  </rule>
 
+ <rule id="255956" level="12">
+ <if_group>sysmon_event1</if_group>
+ <match>w3wp.exe</match>
+ <regex>cmd.exe</regex>
+ <description>ATT&CK T1505.003: Potential webshell interaction</description>
+ <group>MITRE,attack.t1505.003,sysmon</group>
+ </rule>
 </group>
 <group name="command and control">
 
@@ -1669,21 +1683,21 @@
  <rule id="256200" level="5">
  <if_group>sysmon_event_11</if_group>
  <field name="win.eventdata.processId">^4$</field>
- <description>ATT&CK T1570: Executable transfered potentially by Psexec tool, potential lateral movement</description>
+ <description>ATT&CK T1570: Executable transferred potentially by Psexec tool, potential lateral movement</description>
  <group>MITRE,attack.t1570</group>
  </rule>
 
  <rule id="256201" level="12">
  <if_sid>256200</if_sid>
  <regex>.exe</regex>
- <description>ATT&CK T1570: Executable transfered potentially by Psexec tool, potential lateral movement</description>
+ <description>ATT&CK T1570: Executable transferred potentially by Psexec tool, potential lateral movement</description>
  <group>MITRE,attack.t1570</group>
  </rule>
 
  <rule id="256202" level="12">
  <if_sid>255700</if_sid>
  <regex>%COMSPEC%</regex>
- <description>ATT&CK T1543.003: %COMSPEC% Variable in Registry Service, potentail lateral movement or persistence mechanism</description>
+ <description>ATT&CK T1543.003: %COMSPEC% Variable in Registry Service, potential lateral movement or persistence mechanism</description>
  <group>MITRE,attack.t1543.001</group>
  </rule>
 
