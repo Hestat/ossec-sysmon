@@ -1734,3 +1734,11 @@
 
 </group>
 
+<group name="exfiltration,">
+
+ <rule id="256500" level="12">
+ <if_group>sysmon</if_group>
+ <field name="win.eventdata.description">^Rsync.*</field>
+ <description>T1567.002 Rclone potential data exfiltration</description>
+ </rule>
+</group>
