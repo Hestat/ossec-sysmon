@@ -1737,8 +1737,15 @@
 <group name="exfiltration,">
 
  <rule id="256500" level="12">
- <if_group>sysmon,sysmon-modular</if_group>
+ <if_group>sysmon</if_group>
  <field name="win.eventdata.description">^Rsync.*</field>
  <description>T1567.002 Rclone potential data exfiltration</description>
  </rule>
+
+ <rule id="256501" level="12">
+ <if_group>sysmon-modular</if_group>
+ <field name="win.eventdata.description">^Rsync.*</field>
+ <description>T1567.002 Rclone potential data exfiltration</description>
+ </rule>
+
 </group>
