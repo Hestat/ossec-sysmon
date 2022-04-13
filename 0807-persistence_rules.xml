@@ -1,90 +1,125 @@
-
 <group name="persistence,">
 
- <rule id="255700" level="9">
- <if_group>sysmon_event_13</if_group>
- <regex>services.exe</regex>
- <description>ATT&CK T1058:Registry edit for new service</description>
- <group>MITRE,attack.t1058</group>
- </rule>
+    <rule id="255700" level="9">
+        <if_group>sysmon_event_13</if_group>
+        <regex>services.exe</regex>
+        <description>services.exe: Registry edit for new service</description>
+        <mitre>
+            <id>T1058</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
 
- <rule id="255701" level="12">
- <if_sid>255700</if_sid>
- <field name="win.eventdata.details">\\.exe</field>
- <description>ATT&CK T1058:Executable written to Registry for Persistence</description>
- <group>MITRE,attack.t1058</group>
- </rule>
+    <rule id="255701" level="12">
+        <if_sid>255700</if_sid>
+        <field name="win.eventdata.details">\\.exe</field>
+        <description>Executable written to Registry for Persistence</description>
+        <mitre>
+            <id>T1058</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255702" level="12">
- <if_group>sysmon_event_11</if_group>
- <match>\\Programs\\Startup</match>
- <description>ATT&CK T1060: Potential Persistence Method via Startup Folder</description>
- <group>MITRE,attack.t1060</group>
- </rule>
+    <rule id="255702" level="12">
+        <if_group>sysmon_event_11</if_group>
+        <match>\\Programs\\Startup</match>
+        <description>Potential Persistence Method via Startup Folder</description>
+        <mitre>
+            <id>T1060</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255703" level="0">
- <if_sid>255702</if_sid>
- <regex>desktop.ini</regex>
- <description>Startup Folder Whitelist</description>
- <group>MITRE,attack.t1060</group>
- </rule>
+    <rule id="255703" level="0">
+        <if_sid>255702</if_sid>
+        <regex>desktop.ini</regex>
+        <description>Startup Folder Whitelist</description>
+        <mitre>
+            <id>T1060</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255704" level="10">
- <if_group>sysmon_event_11</if_group>
- <field name="win.eventdata.targetFilename">\\.scr</field>
- <description>ATT&CK T1180: Screensaver, unusual filetype anamoly .scr file detected</description>
- <group>MITRE,attack.t1180</group>
- </rule>
+    <rule id="255704" level="10">
+        <if_group>sysmon_event_11</if_group>
+        <field name="win.eventdata.targetFilename">\\.scr</field>
+        <description>Screensaver, unusual filetype anamoly .scr file detected</description>
+        <mitre>
+            <id>T1180</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255705" level="12">
- <if_group>sysmon_event_13</if_group>
- <regex>RunOnce</regex>
- <description>ATT&CK T1547.001: Potential Run Key Persistence Setup</description>
- <group>MITRE,attack.t1547.001</group>
- </rule>
+    <rule id="255705" level="12">
+        <if_group>sysmon_event_13</if_group>
+        <regex>RunOnce</regex>
+        <description>Potential Run Key Persistence Setup</description>
+        <mitre>
+            <id>T1547.001</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255706" level="0">
- <if_sid>255705</if_sid>
- <field name="win.eventdata.image">\\OneDriveSetup.exe</field>
- <description>silence normal onedrive activity</description>
- <group>MITRE,attack.t1160</group>
- </rule>
+    <rule id="255706" level="0">
+        <if_sid>255705</if_sid>
+        <field name="win.eventdata.image">\\OneDriveSetup.exe</field>
+        <description>silence normal onedrive activity</description>
+        <mitre>
+            <id>T1160</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255707" level="0">
- <if_sid>255702</if_sid>
- <regex>Explorer.EXE</regex>
- <description>Startup Folder Whitelist</description>
- <group>MITRE,attack.t1060</group>
- </rule>
+    <rule id="255707" level="0">
+        <if_sid>255702</if_sid>
+        <regex>Explorer.EXE</regex>
+        <description>Startup Folder Whitelist</description>
+        <mitre>
+            <id>T1060</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255708" level="12">
- <if_sid>255539</if_sid>
- <regex>Windows\\CurrentVersion\\Run</regex>
- <description>Run Key Persistence Detected</description>
- <group>MITRE,attack.t1547.001</group>
- </rule>
+    <rule id="255708" level="12">
+        <if_sid>255539</if_sid>
+        <regex>Windows\\CurrentVersion\\Run</regex>
+        <description>Run Key Persistence Detected</description>
+        <mitre>
+            <id>T1547.001</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255709" level="12">
- <if_sid>255572</if_sid>
- <regex>powershell</regex>
- <description>ATT&CK T1547.001: Powershell in registry, potential malicious persistence</description>
- <group>MITRE,attack.t1547.001</group>
- </rule>
+    <rule id="255709" level="12">
+        <if_sid>255572</if_sid>
+        <regex>powershell</regex>
+        <description>Powershell in registry, potential malicious persistence</description>
+        <mitre>
+            <id>T1547.001</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255710" level="12">
- <if_group>sysmon_event_12</if_group>
- <regex>RunOnce</regex>
- <description>ATT&CK T1547.001: Potential Run Key Persistence Setup</description>
- <group>MITRE,attack.t1547.001</group>
- </rule>
+    <rule id="255710" level="12">
+        <if_group>sysmon_event_12</if_group>
+        <regex>RunOnce</regex>
+        <description>Potential Run Key Persistence Setup</description>
+        <mitre>
+            <id>T1547.001</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255711" level="12">
- <if_group>sysmon_event_11</if_group>
- <match>w3wp.exe</match>
- <regex>asp|php|jsp</regex>
- <description>ATT&CK T1505.003: Potential Webshell from IIS</description>
- <group>MITRE,attack.t1505.003</group>
- </rule>
+    <rule id="255711" level="12">
+        <if_group>sysmon_event_11</if_group>
+        <match>w3wp.exe</match>
+        <regex>asp|php|jsp</regex>
+        <description>Potential Webshell from IIS</description>
+        <mitre>
+            <id>T1505.003</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
 </group>

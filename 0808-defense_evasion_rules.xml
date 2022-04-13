@@ -1,57 +1,77 @@
-
 <group name="Defense Evasion,">
 
- <rule id="255800" level="10">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\mshta.exe</field>
- <regex>browser_broker.exe</regex>
- <description>ATT&CK T1170: MSHTA execution demiguise techniques</description>
- <group>MITRE,attack.t1170</group>
- </rule>
+    <rule id="255800" level="10">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\mshta.exe</field>
+        <regex>browser_broker.exe</regex>
+        <description>MSHTA execution demiguise techniques</description>
+        <mitre>
+            <id>T1170</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255801" level="10">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\mshta.exe</field>
- <regex>chrome.exe</regex>
- <description>ATT&CK T1170: MSHTA execution demiguise techniques</description>
- <group>MITRE,attack.t1170</group>
- </rule>
+    <rule id="255801" level="10">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\mshta.exe</field>
+        <regex>chrome.exe</regex>
+        <description>MSHTA execution demiguise techniques</description>
+        <mitre>
+            <id>T1170</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255802" level="10">
- <if_group>sysmon_event1</if_group>
- <regex>firewall set opmode mode=disable</regex>
- <description>ATT&CK T1089: Disabling the Windows Firewall</description>
- <group>MITRE,attack.t1089</group>
- </rule>
+    <rule id="255802" level="10">
+        <if_group>sysmon_event1</if_group>
+        <regex>firewall set opmode mode=disable</regex>
+        <description>Disabling the Windows Firewall</description>
+        <mitre>
+            <id>T1089</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255803" level="10">
- <if_group>sysmon_event1</if_group>
- <regex>advfirewall set currentprofile state off</regex>
- <description>ATT&CK T1089: Disabling the Windows Firewall</description>
- <group>MITRE,attack.t1089</group>
- </rule>
+    <rule id="255803" level="10">
+        <if_group>sysmon_event1</if_group>
+        <regex>advfirewall set currentprofile state off</regex>
+        <description>Disabling the Windows Firewall</description>
+        <mitre>
+            <id>T1089</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255804" level="10">
- <if_group>sysmon_event_11</if_group>
- <field name="win.eventdata.targetFilename">\\.arj</field>
- <description>ATT&CK T1406: Filetype anomaly, unusual file type .arj</description>
- <group>MITRE,attack.t1406</group>
- </rule>
+    <rule id="255804" level="10">
+        <if_group>sysmon_event_11</if_group>
+        <field name="win.eventdata.targetFilename">\\.arj</field>
+        <description>Filetype anomaly, unusual file type .arj</description>
+        <mitre>
+            <id>T1406</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255805" level="12">
- <if_sid>255531</if_sid>
- <field name="win.eventdata.image">sysmon64.exe</field>
- <field name="win.eventdata.commandline">-u</field>
- <description>Sysmon has been uninstalled</description>
- <group>MITRE,attack.t1089</group>
- </rule>
+    <rule id="255805" level="12">
+        <if_sid>255531</if_sid>
+        <field name="win.eventdata.image">sysmon64.exe</field>
+        <field name="win.eventdata.commandline">-u</field>
+        <description>Sysmon has been uninstalled</description>
+        <mitre>
+            <id>T1089</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255806" level="12">
- <if_sid>255531</if_sid>
- <field name="win.eventdata.image">fltmc.exe</field>
- <field name="win.eventdata.commandline">unload</field>
- <description>Unload Filter Driver, possibly sysmon</description>
- <group>MITRE,attack.t1089,sysmon</group>
- </rule>
+    <rule id="255806" level="12">
+        <if_sid>255531</if_sid>
+        <field name="win.eventdata.image">fltmc.exe</field>
+        <field name="win.eventdata.commandline">unload</field>
+        <description>Unload Filter Driver, possibly sysmon</description>
+        <mitre>
+            <id>T1089</id>
+        </mitre>
+        <group>MITRE,sysmon</group>
+    </rule>
 
 </group>

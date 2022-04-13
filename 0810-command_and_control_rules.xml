@@ -1,27 +1,27 @@
 <group name="command and control">
 
-<rule id="256000" level="0">
-  <if_group>sysmon_event3</if_group>
-  <list field="win.eventdata.destinationIp" lookup="address_match_key">etc/lists/emotet-list</list>
-  <description>IP connection to Emotet Command and Control</description>
-  <group>emotet,</group>
-</rule>
+    <rule id="256000" level="0">
+        <if_group>sysmon_event3</if_group>
+        <list field="win.eventdata.destinationIp" lookup="address_match_key">etc/lists/emotet-list</list>
+        <description>IP connection to Emotet Command and Control</description>
+        <group>emotet,</group>
+    </rule>
 
-<rule id="256001" level="10">
-  <if_group>sysmon_event3</if_group>
-  <field name="win.eventdata.image">C:\\Windows\\System32\\wermgr.exe</field>
-  <field name="win.eventdata.destinationPort">449</field>
-  <description>Wergmr connection on port 449 suspected Trickbot injected process C2 activity</description>
-  <group>trickbot,</group>
-</rule>
+    <rule id="256001" level="10">
+        <if_group>sysmon_event3</if_group>
+        <field name="win.eventdata.image">C:\\Windows\\System32\\wermgr.exe</field>
+        <field name="win.eventdata.destinationPort">449</field>
+        <description>Wergmr connection on port 449 suspected Trickbot injected process C2 activity</description>
+        <group>trickbot,</group>
+    </rule>
 
-<rule id="256002" level="10">
-  <if_group>sysmon_event3</if_group>
-  <field name="win.eventdata.image">C:\\Windows\\System32\\svchost.exe</field>
-  <field name="win.eventdata.destinationPort">449</field>
-  <description>Svchost connection on port 449 suspected Trickbot injected process C2 activity</description>
-  <group>trickbot,</group>
-</rule>
+    <rule id="256002" level="10">
+        <if_group>sysmon_event3</if_group>
+        <field name="win.eventdata.image">C:\\Windows\\System32\\svchost.exe</field>
+        <field name="win.eventdata.destinationPort">449</field>
+        <description>Svchost connection on port 449 suspected Trickbot injected process C2 activity</description>
+        <group>trickbot,</group>
+    </rule>
 
 
 </group>

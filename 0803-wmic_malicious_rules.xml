@@ -1,83 +1,112 @@
-
 <group name="WMI,">
 
- <rule id="255200" level="12">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\WMIC.exe</field>
- <regex>process call create</regex>
- <description>Using WMIC for process creation: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.t1047</group>
- </rule>
+    <rule id="255200" level="12">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\WMIC.exe</field>
+        <regex>process call create</regex>
+        <description>Using WMIC for process creation: https://attack.mitre.org/techniques/T1047/</description>
+        <mitre>
+            <id>T1047</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255201" level="12">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\WMIC.exe</field>
- <regex>/namespace:\\root\securitycenter2 path antivirusproduct</regex>
- <description>Using WMIC for Antivirus Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.t1047</group>
- </rule> 
+    <rule id="255201" level="12">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\WMIC.exe</field>
+        <regex>/namespace:\\root\securitycenter2 path antivirusproduct</regex>
+        <description>Using WMIC for Antivirus Enumeration: https://attack.mitre.org/techniques/T1047/</description>
+        <mitre>
+            <id>T1047</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255202" level="8">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\WMIC.exe</field>
- <regex>/NAMESPACE:\\\\root\\directory\\ldap PATH ds_user</regex>
- <description>Using WMIC for Domain User Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.t1047</group>
- </rule>
+    <rule id="255202" level="8">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\WMIC.exe</field>
+        <regex>/NAMESPACE:\\\\root\\directory\\ldap PATH ds_user</regex>
+        <description>Using WMIC for Domain User Enumeration: https://attack.mitre.org/techniques/T1047/</description>
+        <mitre>
+            <id>T1047</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255203" level="8">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\WMIC.exe</field>
- <regex>/NAMESPACE:\\\\root\\directory\\ldap PATH ds_group</regex>
- <description>Using WMIC for Domain Group Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.t1047</group>
- </rule>
+    <rule id="255203" level="8">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\WMIC.exe</field>
+        <regex>/NAMESPACE:\\\\root\\directory\\ldap PATH ds_group</regex>
+        <description>Using WMIC for Domain Group Enumeration: https://attack.mitre.org/techniques/T1047/</description>
+        <mitre>
+            <id>T1047</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255204" level="8">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\WMIC.exe</field>
- <regex>USERACCOUNT</regex>
- <description>Using WMIC for Local Account Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.t1047</group>
- </rule>
+    <rule id="255204" level="8">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\WMIC.exe</field>
+        <regex>USERACCOUNT</regex>
+        <description>Using WMIC for Local Account Enumeration: https://attack.mitre.org/techniques/T1047/</description>
+        <mitre>
+            <id>T1047</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255205" level="8">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\WMIC.exe</field>
- <regex>NTDOMAIN</regex>
- <description>Using WMIC for Domain Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.t1047</group>
- </rule>
+    <rule id="255205" level="8">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\WMIC.exe</field>
+        <regex>NTDOMAIN</regex>
+        <description>Using WMIC for Domain Enumeration: https://attack.mitre.org/techniques/T1047/</description>
+        <mitre>
+            <id>T1047</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255206" level="8">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\WMIC.exe</field>
- <regex>gfe list brief</regex>
- <description>Using WMIC for Host Patch Level Enumeration: https://attack.mitre.org/techniques/T1047/</description>
- <group>MITRE,attack.t1047</group>
- </rule>
+    <rule id="255206" level="8">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\WMIC.exe</field>
+        <regex>gfe list brief</regex>
+        <description>Using WMIC for Host Patch Level Enumeration: https://attack.mitre.org/techniques/T1047/</description>
+        <mitre>
+            <id>T1047</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255207" level="8">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\scrcons.exe</field>
- <description>WMI persistence Script Event Consumer File Write : https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/ </description>
- <group>MITRE,attack.t1084</group>
- </rule>
+    <rule id="255207" level="8">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\scrcons.exe</field>
+        <description>WMI persistence Script Event Consumer File Write : https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/ </description>
+        <mitre>
+            <id>T1084</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255208" level="10">
- <if_sid>255000</if_sid>
- <field name="win.eventdata.parentImage">\\WmiPrvSE.exe</field>
- <description>WmiPrvSE event spawning powershell</description>
- <group>MITRE,attack.t1047</group>
- </rule>
+    <rule id="255208" level="10">
+        <if_sid>255000</if_sid>
+        <field name="win.eventdata.parentImage">\\WmiPrvSE.exe</field>
+        <description>WmiPrvSE event spawning powershell</description>
+        <mitre>
+            <id>T1047</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255209" level="12">
- <if_group>sysmon_event1</if_group>
- <field name="win.eventdata.image">\\WmiPrvSE.exe</field>
- <regex>cmd.exe</regex>
- <match>127.0.0.1</match>
- <description>Red Team WMI technique matching Impacket wmiexec.py tooling</description>
- <group>MITRE,attack.t1047</group>
- </rule>
+    <rule id="255209" level="12">
+        <if_group>sysmon_event1</if_group>
+        <field name="win.eventdata.image">\\WmiPrvSE.exe</field>
+        <regex>cmd.exe</regex>
+        <match>127.0.0.1</match>
+        <description>Red Team WMI technique matching Impacket wmiexec.py tooling</description>
+        <mitre>
+            <id>T1047</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
 </group>

@@ -1,37 +1,38 @@
-
 <group name="privesc,">
 
- <rule id="255600" level="12">
- <if_sid>255531</if_sid>
- <regex>\\csc.exe</regex>
- <match>cmdline</match>
- <description>ATT&CK T1055: Suspected Shellcode Compile on Endpoint</description>
- <group>MITRE,attack.t1055,</group>
- </rule>
+    <rule id="255600" level="12">
+        <if_sid>255531</if_sid>
+        <regex>\\csc.exe</regex>
+        <match>cmdline</match>
+        <description>Suspected Shellcode Compile on Endpoint</description>
+        <mitre>
+            <id>T1055</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255601" level="12">
- <if_sid>255500</if_sid>
- <field name="win.eventdata.image">\\powershell.exe</field>
- <field name="win.eventdata.targetImage">\\rundll32.exe</field>
- <description>ATT&CK T1055: Suspected Process Injection matching Cobalt Strike methods</description>
- <group>MITRE,attack.t1055,</group>
- </rule>
+    <rule id="255601" level="12">
+        <if_sid>255500</if_sid>
+        <field name="win.eventdata.image">\\powershell.exe</field>
+        <field name="win.eventdata.targetImage">\\rundll32.exe</field>
+        <description>Suspected Process Injection matching Cobalt Strike methods</description>
+        <mitre>
+            <id>T1055</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="255602" level="12">
- <if_sid>255524</if_sid>
- <match>\\\\.\\pipe\\</match>
- <description>Named Pipe potential Privilege Escalation (Meterpreter) T1134</description>
- <group>MITRE,attack.t1134,sysmon</group>
- </rule>
 
- <rule id="255603" level="12">
- <if_group>sysmon_event8</if_group>
- <match>rundll32.exe</match>
- <regex>winlogon.exe|dllhost.exe|svchost.exe</regex>
- <description>ATT&CK T1055: Process injections by $(win.eventdata.sourceImage) into $(win.eventdata.targetImage)</description>
- <group>MITRE,attack.t1055,sysmon</group>
- </rule>
+    <rule id="255603" level="12">
+        <if_group>sysmon_event8</if_group>
+        <match>rundll32.exe</match>
+        <regex>winlogon.exe|dllhost.exe|svchost.exe</regex>
+        <description>Process injections by $(win.eventdata.sourceImage) into $(win.eventdata.targetImage)</description>
+        <mitre>
+            <id>T1055</id>
+        </mitre>
+        <group>MITRE,sysmon</group>
+    </rule>
 
 
 </group>
-

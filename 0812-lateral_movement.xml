@@ -1,56 +1,77 @@
 <group name="lateral movement,">
 
- <rule id="256200" level="5">
- <if_group>sysmon_event_11</if_group>
- <field name="win.eventdata.processId">^4$</field>
- <description>ATT&CK T1570: Executable transferred potentially by Psexec tool, potential lateral movement</description>
- <group>MITRE,attack.t1570</group>
- </rule>
+    <rule id="256200" level="5">
+        <if_group>sysmon_event_11</if_group>
+        <field name="win.eventdata.processId">^4$</field>
+        <description>Executable transferred potentially by Psexec tool, potential lateral movement</description>
+        <mitre>
+            <id>T1570</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="256201" level="12">
- <if_sid>256200</if_sid>
- <regex>.exe</regex>
- <description>ATT&CK T1570: Executable transferred potentially by Psexec tool, potential lateral movement</description>
- <group>MITRE,attack.t1570</group>
- </rule>
+    <rule id="256201" level="12">
+        <if_sid>256200</if_sid>
+        <regex>.exe</regex>
+        <description>Executable transferred potentially by Psexec tool, potential lateral movement</description>
+        <mitre>
+            <id>T1570</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="256202" level="12">
- <if_sid>255700</if_sid>
- <regex>%COMSPEC%</regex>
- <description>ATT&CK T1543.003: %COMSPEC% Variable in Registry Service, potential lateral movement or persistence mechanism</description>
- <group>MITRE,attack.t1543.001</group>
- </rule>
+    <rule id="256202" level="12">
+        <if_sid>255700</if_sid>
+        <regex>%COMSPEC%</regex>
+        <description>%COMSPEC% Variable in Registry Service, potential lateral movement or persistence mechanism</description>
+        <mitre>
+            <id>T1543.001</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="256203" level="12">
- <if_sid>60106</if_sid>
- <field name="win.eventdata.logonType">10|12</field>
- <description>ATT&CK T1021/T1133: Successful RDP Logon from $(win.eventdata.ipAddress)</description>
- <group>MITRE,attack.t1021,attack.t1133</group>
- </rule>
+    <rule id="256203" level="12">
+        <if_sid>60106</if_sid>
+        <field name="win.eventdata.logonType">10|12</field>
+        <description>Successful RDP Logon from $(win.eventdata.ipAddress)</description>
+        <mitre>
+            <id>T1021</id>
+            <id>T1133</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="256204" level="12">
- <if_group>sysmon_event_11</if_group>
- <match>Network Shortcuts</match>
- <regex>c\$</regex>
- <description>ATT&CK T1021.002: Remote System C$ drive mounted</description>
- <group>MITRE,attack.t1021.002</group>
- </rule>
+    <rule id="256204" level="12">
+        <if_group>sysmon_event_11</if_group>
+        <match>Network Shortcuts</match>
+        <regex>c\$</regex>
+        <description>Remote System C$ drive mounted</description>
+        <mitre>
+            <id>T1021.002</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="256205" level="12">
- <if_sid>60106</if_sid>
- <field name="win.eventdata.logonType">9</field>
- <match>seclogo</match> 
- <description>ATT&CK T1550.002: Potential Pass the Hash Attack</description>
- <group>MITRE,attack.t1550.002</group>
- </rule>
+    <rule id="256205" level="12">
+        <if_sid>60106</if_sid>
+        <field name="win.eventdata.logonType">9</field>
+        <match>seclogo</match>
+        <description>Potential Pass the Hash Attack</description>
+        <mitre>
+            <id>T1550.002</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
- <rule id="256206" level="12">
- <if_group>sysmon_event_17</if_group>
- <regex>msagent_</regex>
- <description>ATT&CK T1071: Cobalt Strike Named Pipe SMB Beacon usage</description>
- <group>MITRE,attack.t1071</group>
- </rule>
+    <rule id="256206" level="12">
+        <if_group>sysmon_event_17</if_group>
+        <regex>msagent_</regex>
+        <description>Cobalt Strike Named Pipe SMB Beacon usage</description>
+        <mitre>
+            <id>T1071</id>
+        </mitre>
+        <group>MITRE,</group>
+    </rule>
 
 
 </group>
-
