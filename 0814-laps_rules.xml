@@ -1,3 +1,5 @@
+<var name="MS_FREQ">20</var>
+
 <group name="windows,laps,">
     <rule id="110010" level="3">
         <if_sid>60103</if_sid>
@@ -7,4 +9,10 @@
             <id>T1055</id>
         </mitre>
     </rule>
+
+    <rule id="110011" level="12" frequency="$MS_FREQ" timeframe="600">
+        <if_matched_sid>110010</if_matched_sid>
+        <description>20 LAPS accesses in 10 minutes</description>
+        <options>no_full_log</options>
+  </rule>
 </group>
