@@ -1,0 +1,41 @@
+<group name="windows,task_scheduler,">
+    <rule id="110000" level="0">
+        <if_sid>60000</if_sid>
+        <field name="win.system.channel">^Microsoft-Windows-TaskScheduler/Operational$</field>
+        <options>no_full_log</options>
+        <description>Group of Windows rules for the Task Scheduler channel</description>
+    </rule>
+
+    <rule id="110001" level="0">
+        <if_sid>60009</if_sid>
+        <field name="win.system.severityValue">^INFORMATION$</field>
+        <description>Windows Scheduler informational Event</description>
+        <options>no_full_log</options>
+    </rule>
+
+    <rule id="110002" level="0">
+        <if_sid>60010</if_sid>
+        <field name="win.system.severityValue">^WARNING$</field>
+        <description>Windows Scheduler warning event</description>
+        <options>no_full_log</options>
+    </rule>
+
+    <rule id="110003" level="5">
+        <if_sid>60011</if_sid>
+        <field name="win.system.severityValue">^ERROR$</field>
+        <description>Windows Scheduler error event</description>
+        <options>no_full_log</options>
+    </rule>
+
+    <rule id="110004" level="12">
+        <if_sid>110001</if_sid>
+        <field name="win.system.eventID">^106$</field>
+        <description>Task Scheduler: A new task was created</description>
+    </rule>
+
+    <rule id="110005" level="2">
+        <if_sid>110001</if_sid>
+        <field name="win.system.eventID">^141$</field>
+        <description>Task Scheduler: A task was removed</description>
+    </rule>
+</group>

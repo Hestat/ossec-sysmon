@@ -1,0 +1,10 @@
+<group name="windows,laps,">
+    <rule id="110010" level="3">
+        <if_sid>60103</if_sid>
+        <field name="win.system.eventID">^4662$</field>
+        <description>LAPS: User $(win.eventdata.subjectUserName) requested the password for computer with GUID $(win.eventdata.objectName)</description>
+        <mitre>
+            <id>T1055</id>
+        </mitre>
+    </rule>
+</group>
